@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cross-Rate Battery SOH Prediction | Rong Zhang</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav"><a class="brand" href="../index.html">Rong Zhang</a><div class="nav-links"><a href="../index.html#research">Research</a><a href="../index.html#publication">Publication</a><a href="../index.html#contact">Contact</a></div></nav></header>
+  <main>
+    <div class="detail-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#research">← Back to projects</a>
+        <div class="eyebrow">Battery health · Transfer learning</div>
+        <h1>Cross-Rate Lithium-Ion Battery SOH Prediction</h1>
+        <p class="detail-lead">A GJO-TCN-Transformer framework for transferring degradation knowledge from multi-source public datasets to high-rate pouch-cell state-of-health prediction.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container detail-grid">
+        <div class="detail-panel">
+          <h2>Research question</h2>
+          <p>Can knowledge learned from public battery datasets support accurate full-life SOH prediction when labeled high-rate automotive pouch-cell data are limited?</p>
+          <h2>Approach</h2>
+          <ul>
+            <li>Pre-trained a source-domain model using eight public cells.</li>
+            <li>Used a TCN to capture local degradation patterns and a Transformer to model long-term dependencies.</li>
+            <li>Applied Golden Jackal Optimization to tune target-domain adaptation.</li>
+            <li>Evaluated four cross-battery transfer settings using three laboratory pouch cells.</li>
+          </ul>
+        </div>
+        <aside class="detail-panel">
+          <h2>Reported results</h2>
+          <p>The proposed model achieved the lowest reported MAE, RMSE, and MAPE in all four transfer settings in the manuscript.</p>
+          <div class="metrics">
+            <div class="metric"><strong>8</strong>source cells</div>
+            <div class="metric"><strong>3</strong>target cells</div>
+            <div class="metric"><strong>0.319–0.444%</strong>MAPE</div>
+          </div>
+          <p class="status">Manuscript under revision at the <em>Journal of The Electrochemical Society</em>.</p>
+        </aside>
+      </div>
+
+      <div class="container gallery two">
+        <figure><img src="../assets/battery-experiment.jpg" alt="Instrumented pouch cell"><figcaption>Instrumented pouch cell used for high-rate aging tests.</figcaption></figure>
+        <figure><img src="../assets/battery-soh-result.png" alt="Cross-battery SOH prediction result"><figcaption>Example cross-battery prediction showing the proposed model and baseline trajectories.</figcaption></figure>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">© 2026 Rong Zhang</footer>
+</body>
+</html>

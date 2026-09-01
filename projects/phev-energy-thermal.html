@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHEV Energy and Thermal Management | Rong Zhang</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav"><a class="brand" href="../index.html">Rong Zhang</a><div class="nav-links"><a href="../index.html#research">Research</a><a href="../index.html#publication">Publication</a><a href="../index.html#contact">Contact</a></div></nav></header>
+  <main>
+    <div class="detail-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#research">← Back to projects</a>
+        <div class="eyebrow">Electrified vehicles · Energy management</div>
+        <h1>PHEV Energy and Thermal Management</h1>
+        <p class="detail-lead">A coordinated simulation framework for comparing online and globally optimized energy-management strategies under the CLTC-P driving cycle.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container detail-grid">
+        <div class="detail-panel">
+          <h2>Project scope</h2>
+          <ul>
+            <li>Built a longitudinal power-demand model for the CLTC-P driving cycle.</li>
+            <li>Modeled fuel consumption, motor efficiency, SOC, and first-order battery thermal dynamics.</li>
+            <li>Implemented CD-CS, ECMS, and thermal-constrained ECMS.</li>
+            <li>Used dynamic programming as a global optimization benchmark.</li>
+            <li>Evaluated fuel use, electrical energy, terminal SOC, peak temperature, and temperature-limit violations.</li>
+          </ul>
+        </div>
+        <aside class="detail-panel">
+          <h2>Methods</h2>
+          <div class="chips">
+            <span class="chip">CD-CS</span><span class="chip">ECMS</span><span class="chip">Thermal ECMS</span><span class="chip">Dynamic programming</span>
+          </div>
+          <p class="status">Technical stack: Python, NumPy, pandas, SciPy, and Matplotlib.</p>
+          <p><a class="project-link" href="https://github.com/zr057/PHEV-Energy-Thermal-Management">View source repository →</a></p>
+        </aside>
+      </div>
+
+      <div class="container gallery">
+        <figure><img src="../assets/phev-strategy-comparison.png" alt="Comparison of CD-CS, ECMS, and Thermal ECMS"><figcaption>Unified comparison of SOC, battery temperature, engine power, and battery power across three online strategies.</figcaption></figure>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">© 2026 Rong Zhang</footer>
+</body>
+</html>
