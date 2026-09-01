@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rong Zhang — research in battery intelligence, state-of-health estimation, transfer learning, and energy management.">
+  <title>Rong Zhang | Battery Intelligence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top">Rong Zhang</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publication">Publication</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="container hero-grid">
+        <div class="monogram" aria-label="Rong Zhang initials">RZ</div>
+        <div>
+          <div class="eyebrow">Research portfolio</div>
+          <h1>Rong Zhang</h1>
+          <p class="hero-subtitle">Battery intelligence · State-of-health estimation · Energy management</p>
+          <p class="hero-copy">I develop data-driven methods for lithium-ion battery health estimation and intelligent energy management in electrified vehicles, combining experiments, time-series modeling, transfer learning, optimization, and engineering evaluation.</p>
+          <div class="hero-actions">
+            <a class="button" href="#research">View research</a>
+            <a class="button secondary" href="https://github.com/zr057">GitHub profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="eyebrow">About</div>
+        <h2>Research focus</h2>
+        <p class="section-intro">My work focuses on extracting reliable information from limited and heterogeneous battery data, then translating it into models and control strategies that are useful in real engineering systems.</p>
+        <div class="chips" aria-label="Research interests">
+          <span class="chip">Battery SOH & prognostics</span>
+          <span class="chip">Transfer learning</span>
+          <span class="chip">Time-series modeling</span>
+          <span class="chip">Energy management</span>
+          <span class="chip">Thermal management</span>
+          <span class="chip">Optimization & control</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="eyebrow">Selected research</div>
+        <h2>Projects</h2>
+        <p class="section-intro">Each project combines a concrete engineering question with reproducible modeling, evaluation, and visualization.</p>
+
+        <div class="project-list">
+          <article class="project-card">
+            <div class="project-media">
+              <img src="assets/battery-experiment.jpg" alt="Instrumented high-rate pouch cell in the experimental chamber">
+              <img class="plot" src="assets/battery-soh-result.png" alt="Cross-battery SOH prediction curves">
+            </div>
+            <div class="project-content">
+              <div class="project-meta">Battery health · Research manuscript</div>
+              <h3>Cross-Rate Lithium-Ion Battery SOH Prediction</h3>
+              <p>A GJO-TCN-Transformer transfer-learning framework that transfers degradation knowledge from public datasets to high-rate automotive pouch cells.</p>
+              <div class="project-tags">
+                <span class="tag">MATLAB</span>
+                <span class="tag">TCN</span>
+                <span class="tag">Transformer</span>
+                <span class="tag">Transfer learning</span>
+              </div>
+              <a class="project-link" href="projects/battery-soh.html">View project →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-media single">
+              <img class="plot" src="assets/phev-strategy-comparison.png" alt="Comparison of CD-CS, ECMS, and Thermal ECMS strategies">
+            </div>
+            <div class="project-content">
+              <div class="project-meta">Electrified vehicles · Control and optimization</div>
+              <h3>PHEV Energy and Thermal Management</h3>
+              <p>A simulation and evaluation framework comparing CD-CS, ECMS, Thermal ECMS, and dynamic programming under the CLTC-P driving cycle.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">ECMS</span>
+                <span class="tag">Dynamic programming</span>
+                <span class="tag">Thermal modeling</span>
+              </div>
+              <a class="project-link" href="projects/phev-energy-thermal.html">View project →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publication">
+      <div class="container">
+        <div class="eyebrow">Publication</div>
+        <h2>Manuscript</h2>
+        <div class="publication">
+          <p><strong>Rong Zhang</strong>, Xilong Li, and Hai Wang. “Health Prediction of Lithium-ion Batteries via Cross-Rate Transfer Learning Based on a TCN-Transformer Model.”</p>
+          <p class="status">Manuscript under revision at the <em>Journal of The Electrochemical Society</em>, JES-116943.R1, 2026. DOI not yet available.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="eyebrow">Contact</div>
+        <h2>Get in touch</h2>
+        <div class="contact-panel">
+          <p>For questions about my projects, please contact me through <a href="https://github.com/zr057">GitHub</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2026 Rong Zhang · Built as an academic research portfolio</footer>
+</body>
+</html>
