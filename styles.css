@@ -65,17 +65,14 @@ a:hover { text-decoration: underline; }
   gap: 42px;
 }
 
-.monogram {
+.profile-photo {
   width: 142px;
   height: 142px;
-  display: grid;
-  place-items: center;
   border-radius: 50%;
-  color: #fff;
-  background: linear-gradient(145deg, var(--navy), var(--blue));
+  border: 4px solid #fff;
+  object-fit: cover;
+  object-position: center 30%;
   box-shadow: var(--shadow);
-  font-family: Georgia, serif;
-  font-size: 2.8rem;
 }
 
 .eyebrow {
@@ -212,7 +209,7 @@ section { padding: 72px 0; }
   .nav-links { gap: 14px; font-size: .86rem; }
   .hero { padding-top: 65px; }
   .hero-grid { grid-template-columns: 1fr; gap: 24px; }
-  .monogram { width: 106px; height: 106px; font-size: 2.1rem; }
+  .profile-photo { width: 106px; height: 106px; }
   .project-card, .detail-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .split-section { grid-template-columns: 1fr; }
