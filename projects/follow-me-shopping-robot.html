@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FollowMe autonomous shopping-cart research project by Rong Zhang: mapping, path planning, obstacle avoidance, and motion control.">
+  <title>FollowMe Autonomous Shopping Cart | Rong Zhang</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav"><a class="brand" href="../index.html">Rong Zhang</a><div class="nav-links"><a href="../index.html#research">Research</a><a href="../index.html#publication">Publication</a><a href="../index.html#contact">Contact</a></div></nav></header>
+  <main>
+    <div class="detail-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#research">← Back to projects</a>
+        <div class="eyebrow">Mobile robotics · Planning and control</div>
+        <h1>FollowMe Autonomous Shopping Cart</h1>
+        <p class="detail-lead">A physical indoor mobile-robot prototype integrating LiDAR mapping, global-local path planning, obstacle avoidance, and differential-drive trajectory control for smart-retail scenarios.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://github.com/zr057/follow-me-shopping-robot">View GitHub repository</a>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container detail-grid">
+        <div class="detail-panel">
+          <h2>Project outcome</h2>
+          <p>The team converted a folding shopping cart into a mobile-robot prototype and evaluated indoor mapping, repeat localization, target following, path tracking, and corridor obstacle avoidance.</p>
+          <ul>
+            <li>Built and integrated a differential-drive shopping-cart prototype.</li>
+            <li>Created a LiDAR-based indoor occupancy map for navigation.</li>
+            <li>Implemented grid-based global planning and local obstacle avoidance.</li>
+            <li>Connected planning output with closed-loop chassis control.</li>
+          </ul>
+        </div>
+        <aside class="detail-panel">
+          <h2>Reported results</h2>
+          <div class="metrics">
+            <div class="metric"><strong>1.59 m</strong>mean following distance</div>
+            <div class="metric"><strong>&lt; 0.15 m</strong>path-tracking error</div>
+            <div class="metric"><strong>±5°</strong>heading repeatability</div>
+          </div>
+          <p class="status">Additional repeat-localization errors: X ±0.05 m and Y ±0.10 m. Values are taken from the formal final report.</p>
+        </aside>
+      </div>
+
+      <div class="container gallery two">
+        <figure><img src="../assets/followme-prototype.png" alt="FollowMe autonomous shopping-cart prototype"><figcaption>Integrated physical prototype used for indoor navigation and control experiments.</figcaption></figure>
+        <figure><img src="../assets/followme-corridor-test.jpg" alt="Corridor obstacle-avoidance experiment"><figcaption>Indoor corridor experiment with traffic-cone obstacles.</figcaption></figure>
+      </div>
+
+      <div class="container detail-section detail-grid">
+        <div class="detail-panel compact-panel">
+          <h2>My role</h2>
+          <p><strong>Project lead · Path-planning developer · System-integration coordinator</strong></p>
+          <ul>
+            <li>Designed the grid-based A* global-planning workflow.</li>
+            <li>Implemented eight-neighbor search, obstacle constraints, path reconstruction, and path simplification.</li>
+            <li>Participated in global-local planner integration.</li>
+            <li>Coordinated mapping, planning, and chassis-control interfaces.</li>
+            <li>Organized simulation and physical testing and analyzed trajectory and localization errors.</li>
+          </ul>
+        </div>
+        <aside class="detail-panel compact-panel">
+          <h2>Technical stack</h2>
+          <div class="chips">
+            <span class="chip">ROS</span><span class="chip">LiDAR</span><span class="chip">SLAM</span><span class="chip">A*</span><span class="chip">Local planning</span><span class="chip">PID control</span>
+          </div>
+          <p class="status">Undergraduate Innovation Training Project, Hefei University of Technology · May 2025–April 2026.</p>
+        </aside>
+      </div>
+
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">System workflow</div>
+          <h2>From environment sensing to chassis motion</h2>
+          <p>The navigation pipeline connects perception, mapping, planning, and control in a closed physical loop.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><span>01</span><h3>Sense</h3><p>LiDAR and odometry capture the surrounding geometry and robot state.</p></article>
+          <article class="process-step"><span>02</span><h3>Map and localize</h3><p>SLAM builds a two-dimensional occupancy map and estimates robot pose.</p></article>
+          <article class="process-step"><span>03</span><h3>Plan</h3><p>A* generates the global route while local planning reacts to nearby obstacles.</p></article>
+          <article class="process-step"><span>04</span><h3>Control</h3><p>Closed-loop control converts path error into differential wheel commands.</p></article>
+        </div>
+      </div>
+
+      <div class="container gallery two">
+        <figure><img src="../assets/followme-rviz-map.png" alt="Indoor occupancy map in RViz"><figcaption>LiDAR-based indoor occupancy map displayed in RViz.</figcaption></figure>
+        <figure><img src="../assets/followme-architecture.png" alt="FollowMe project technical route"><figcaption>Project-level technical route linking chassis, sensing, planning, and interaction modules.</figcaption></figure>
+      </div>
+
+      <div class="container detail-section detail-grid">
+        <div class="detail-panel compact-panel">
+          <h2>Planning contribution</h2>
+          <ul>
+            <li>Eight-direction grid search with map-boundary and collision checks</li>
+            <li>Heuristic-guided node expansion and parent-based path reconstruction</li>
+            <li>Redundant-turn removal and collision-checked path shortcutting</li>
+            <li>Local trajectory scoring using goal direction, obstacle clearance, speed, and global-route consistency</li>
+          </ul>
+        </div>
+        <aside class="detail-panel compact-panel">
+          <h2>Evidence boundary</h2>
+          <p>The formal report indicates that the laser-based navigation chain was the primary implemented system. Visual target recognition and multimodal fusion were not fully integrated.</p>
+          <p class="status">The public repository contains a transparent reconstruction of the planning logic rather than the missing historical ROS workspace.</p>
+          <p><a class="project-link" href="https://github.com/zr057/follow-me-shopping-robot">Explore the code and documentation →</a></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">© 2026 Rong Zhang</footer>
+</body>
+</html>
