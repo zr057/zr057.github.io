@@ -40,8 +40,74 @@
         </aside>
       </div>
 
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Engineering workflow</div>
+          <h2>From driving cycle to control evaluation</h2>
+          <p>The framework connects vehicle demand, powertrain efficiency, battery state, and thermal constraints in one repeatable simulation pipeline.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><span>01</span><h3>Driving demand</h3><p>CLTC-P speed and acceleration were converted into traction power using longitudinal vehicle dynamics.</p></article>
+          <article class="process-step"><span>02</span><h3>Component models</h3><p>Engine fuel use, motor efficiency, battery SOC, and first-order thermal behavior were modeled.</p></article>
+          <article class="process-step"><span>03</span><h3>Control design</h3><p>CD-CS, ECMS, and temperature-aware ECMS allocated power between the engine and battery.</p></article>
+          <article class="process-step"><span>04</span><h3>Benchmarking</h3><p>Dynamic programming provided a global-optimization reference for evaluating online strategies.</p></article>
+        </div>
+      </div>
+
+      <div class="container detail-section split-section">
+        <div>
+          <div class="eyebrow">Control methods</div>
+          <h2>Four complementary strategies</h2>
+          <p class="section-copy">The comparison progresses from rule-based control to real-time optimization, thermal-aware control, and a global benchmark.</p>
+        </div>
+        <div class="method-list">
+          <article><strong>CD-CS</strong><p>Switches between charge-depleting and charge-sustaining modes using SOC thresholds.</p></article>
+          <article><strong>ECMS</strong><p>Converts battery energy into equivalent fuel use and optimizes instantaneous power allocation.</p></article>
+          <article><strong>Thermal ECMS</strong><p>Adds a temperature-dependent penalty to reduce battery loading at elevated temperatures.</p></article>
+          <article><strong>Dynamic programming</strong><p>Uses SOC and battery temperature as states to estimate a global optimization benchmark.</p></article>
+        </div>
+      </div>
+
       <div class="container gallery">
         <figure><img src="../assets/phev-strategy-comparison.png" alt="Comparison of CD-CS, ECMS, and Thermal ECMS"><figcaption>Unified comparison of SOC, battery temperature, engine power, and battery power across three online strategies.</figcaption></figure>
+      </div>
+
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Simulation study</div>
+          <h2>Representative comparison</h2>
+          <p>Baseline condition: 30 CLTC-P cycles, 35 °C ambient temperature, initial SOC of 0.60, ECMS equivalence factor of 1.6, and thermal penalty weight of 5.0.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table results-table">
+            <thead><tr><th>Strategy</th><th>Equivalent fuel consumption (L/100 km)</th><th>Final SOC</th><th>Peak battery temperature (°C)</th></tr></thead>
+            <tbody>
+              <tr><td>CD-CS</td><td>7.05</td><td>0.569</td><td>35.3</td></tr>
+              <tr><td>ECMS</td><td>22.32</td><td>0.694</td><td>36.5</td></tr>
+              <tr><td><strong>Thermal ECMS</strong></td><td><strong>14.09</strong></td><td><strong>0.612</strong></td><td><strong>35.0</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="insight-box"><strong>Engineering takeaway.</strong> Under the selected parameters, Thermal ECMS limited the peak battery temperature to 35.0 °C while keeping terminal SOC closer to its initial value than the other online strategies.</div>
+      </div>
+
+      <div class="container detail-section detail-grid">
+        <div class="detail-panel compact-panel">
+          <h2>Evaluation dimensions</h2>
+          <ul>
+            <li>Fuel and electrical energy consumption</li>
+            <li>Equivalent fuel consumption</li>
+            <li>Terminal state of charge</li>
+            <li>Peak battery temperature</li>
+            <li>Temperature-limit violations</li>
+          </ul>
+        </div>
+        <aside class="detail-panel compact-panel">
+          <h2>What the project demonstrates</h2>
+          <p>End-to-end engineering analysis: mathematical modeling, controller implementation, parameter sweeps, global optimization, quantitative comparison, and publication-quality visualization.</p>
+          <p class="status">Python · NumPy · pandas · SciPy · Matplotlib</p>
+          <p><a class="project-link" href="https://github.com/zr057/PHEV-Energy-Thermal-Management">Explore the code and documentation →</a></p>
+        </aside>
       </div>
     </section>
   </main>

@@ -43,9 +43,79 @@
         </aside>
       </div>
 
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Research design</div>
+          <h2>From public-cell knowledge to high-rate prediction</h2>
+          <p>The study separates broad degradation-pattern learning from target-cell adaptation, allowing the model to use limited high-rate aging data more efficiently.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><span>01</span><h3>Source data</h3><p>Health features were extracted from eight cells across NASA, CALCE, and XJTU datasets.</p></article>
+          <article class="process-step"><span>02</span><h3>Feature screening</h3><p>Pearson correlation analysis was used to retain degradation-sensitive health indicators.</p></article>
+          <article class="process-step"><span>03</span><h3>Sequence learning</h3><p>A TCN captured local temporal patterns while a Transformer modeled long-term dependencies.</p></article>
+          <article class="process-step"><span>04</span><h3>Target adaptation</h3><p>TCN parameters were frozen and GJO-guided fine-tuning adapted the model to a high-rate pouch cell.</p></article>
+        </div>
+      </div>
+
+      <div class="container detail-section split-section">
+        <div>
+          <div class="eyebrow">Data</div>
+          <h2>Source and target domains</h2>
+          <p class="section-copy">The source domain provides diverse degradation patterns; the target domain tests transfer to large-format cells under high-rate aging.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Domain</th><th>Cells</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td>NASA</td><td>B5, B6, B7</td><td>Source feature learning</td></tr>
+              <tr><td>CALCE</td><td>C35, C36, C37</td><td>Source feature learning</td></tr>
+              <tr><td>XJTU</td><td>D1, D2</td><td>Source feature learning</td></tr>
+              <tr><td>Laboratory pouch cells</td><td>Battery 1, 2, 3</td><td>Fine-tuning and evaluation</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div class="container gallery two">
         <figure><img src="../assets/battery-experiment.jpg" alt="Instrumented pouch cell"><figcaption>Instrumented pouch cell used for high-rate aging tests.</figcaption></figure>
         <figure><img src="../assets/battery-soh-result.png" alt="Cross-battery SOH prediction result"><figcaption>Example cross-battery prediction showing the proposed model and baseline trajectories.</figcaption></figure>
+      </div>
+
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Evaluation</div>
+          <h2>Cross-battery prediction results</h2>
+          <p>The proposed model achieved the lowest reported MAE, RMSE, and MAPE across all four transfer settings in the manuscript.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table results-table">
+            <thead><tr><th>Fine-tuning cell → prediction cell</th><th>MAE (%)</th><th>RMSE (%)</th><th>MAPE (%)</th></tr></thead>
+            <tbody>
+              <tr><td>Battery 1 → Battery 2</td><td><strong>0.298</strong></td><td><strong>0.436</strong></td><td><strong>0.325</strong></td></tr>
+              <tr><td>Battery 1 → Battery 3</td><td><strong>0.417</strong></td><td><strong>0.524</strong></td><td><strong>0.444</strong></td></tr>
+              <tr><td>Battery 2 → Battery 1</td><td><strong>0.308</strong></td><td><strong>0.528</strong></td><td><strong>0.334</strong></td></tr>
+              <tr><td>Battery 3 → Battery 1</td><td><strong>0.300</strong></td><td><strong>0.451</strong></td><td><strong>0.319</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="insight-box"><strong>Interpretation.</strong> The prediction curves remain close to the measured SOH trajectory during nonlinear late-life degradation, where the baseline models show larger fluctuations.</div>
+      </div>
+
+      <div class="container detail-section detail-grid">
+        <div class="detail-panel compact-panel">
+          <h2>Technical contribution</h2>
+          <ul>
+            <li>Connected multi-source pre-training with cross-rate, cross-cell transfer.</li>
+            <li>Combined local and long-range temporal feature modeling.</li>
+            <li>Used population-based optimization to support target-domain adaptation.</li>
+            <li>Validated the method under four train-to-test cell combinations.</li>
+          </ul>
+        </div>
+        <aside class="detail-panel compact-panel">
+          <h2>Reproducibility scope</h2>
+          <p>Selected MATLAB scripts cover the model architecture, baselines, optimization functions, evaluation utilities, and plotting workflow.</p>
+          <p class="status">Raw laboratory data, third-party datasets, and trained weights are not distributed. Reported values are taken from the manuscript.</p>
+        </aside>
       </div>
     </section>
   </main>
