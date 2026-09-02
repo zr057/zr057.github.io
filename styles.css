@@ -172,14 +172,13 @@ section { padding: 72px 0; }
   background: #fff;
 }
 
-.experience-logo-wrap:hover { text-decoration: none; }
 .experience-logo { display: block; max-width: 230px; max-height: 76px; }
 .hella-logo { width: 180px; }
 
 .catarc-logo-wrap {
   gap: 16px;
-  color: #fff;
-  background: #123c73;
+  color: var(--navy);
+  background: #fff;
   font-weight: 750;
 }
 
