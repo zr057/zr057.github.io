@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Coordinated PHEV energy and battery thermal management architecture</title>
+  <desc id="desc">English system diagram showing the series hybrid energy path, battery thermal model, cooling system, control objectives, energy management controller, and feedback variables.</desc>
+  <defs>
+    <style>
+      .title{font:700 26px Arial,sans-serif;fill:#102d49}.label{font:700 21px Arial,sans-serif;fill:#18364f}.body{font:16px Arial,sans-serif;fill:#52677a}.small{font:700 14px Arial,sans-serif;fill:#53697c}.flow{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.feedback{fill:none;stroke:#315b7d;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.node{stroke-width:2}.tag{font:700 15px Arial,sans-serif;fill:#fff;letter-spacing:.4px}
+    </style>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e57d2b"/></marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1774ad"/></marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4c9a62"/></marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7b58a5"/></marker>
+    <marker id="arrow-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#315b7d"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#17334d" flood-opacity=".10"/></filter>
+  </defs>
+
+  <rect width="1400" height="820" rx="24" fill="#f8fbfd"/>
+  <text x="700" y="46" text-anchor="middle" class="title">Coordinated Energy &amp; Battery Thermal Management</text>
+
+  <rect x="55" y="70" width="1290" height="225" rx="22" fill="#fff" stroke="#b8cfdf" stroke-width="2" stroke-dasharray="9 7"/>
+  <rect x="562" y="58" width="276" height="36" rx="18" fill="#1769aa"/>
+  <text x="700" y="82" text-anchor="middle" class="tag">ENERGY FLOW · POWERTRAIN</text>
+
+  <g filter="url(#shadow)">
+    <rect class="node" x="80" y="116" width="190" height="132" rx="18" fill="#fff1e8" stroke="#d79765"/>
+    <rect class="node" x="325" y="116" width="190" height="132" rx="18" fill="#fff8dd" stroke="#ceb86c"/>
+    <rect class="node" x="570" y="116" width="210" height="132" rx="18" fill="#eaf4fb" stroke="#6f9dbb"/>
+    <rect class="node" x="835" y="116" width="190" height="132" rx="18" fill="#edf7eb" stroke="#86ae7c"/>
+    <rect class="node" x="1080" y="116" width="240" height="132" rx="18" fill="#f4effa" stroke="#9d86b8"/>
+  </g>
+  <text x="175" y="157" text-anchor="middle" class="label">Engine</text>
+  <text x="175" y="190" text-anchor="middle" class="body">Fuel → mechanical power</text>
+  <text x="175" y="218" text-anchor="middle" class="body">Command: P<tspan baseline-shift="sub" font-size="12">eng</tspan></text>
+  <text x="420" y="157" text-anchor="middle" class="label">Generator</text>
+  <text x="420" y="190" text-anchor="middle" class="body">Mechanical → electrical</text>
+  <text x="420" y="218" text-anchor="middle" class="body">Efficiency map</text>
+  <text x="675" y="157" text-anchor="middle" class="label">DC Bus / Inverter</text>
+  <text x="675" y="190" text-anchor="middle" class="body">Power aggregation</text>
+  <text x="675" y="218" text-anchor="middle" class="body">DC / AC conversion</text>
+  <text x="930" y="157" text-anchor="middle" class="label">Traction Motor</text>
+  <text x="930" y="190" text-anchor="middle" class="body">Electrical → mechanical</text>
+  <text x="930" y="218" text-anchor="middle" class="body">Drive / regeneration</text>
+  <text x="1200" y="157" text-anchor="middle" class="label">Wheels &amp; Road Load</text>
+  <text x="1200" y="190" text-anchor="middle" class="body">Follow the drive cycle</text>
+  <text x="1200" y="218" text-anchor="middle" class="body">Meet traction demand</text>
+
+  <path class="flow" d="M270 182H315" stroke="#e57d2b" marker-end="url(#arrow-orange)"/>
+  <path class="flow" d="M515 182H560" stroke="#e57d2b" marker-end="url(#arrow-orange)"/>
+  <path class="flow" d="M780 182H825" stroke="#1774ad" marker-end="url(#arrow-blue)"/>
+  <path class="flow" d="M1025 182H1070" stroke="#4c9a62" marker-end="url(#arrow-green)"/>
+  <text x="292" y="165" text-anchor="middle" class="small">MECH.</text>
+  <text x="537" y="165" text-anchor="middle" class="small">ELEC.</text>
+
+  <g filter="url(#shadow)">
+    <rect class="node" x="250" y="350" width="245" height="140" rx="18" fill="#e7f7fa" stroke="#60a4b5"/>
+    <rect class="node" x="575" y="350" width="250" height="140" rx="18" fill="#f2f6df" stroke="#9cac61"/>
+    <rect class="node" x="905" y="350" width="245" height="140" rx="18" fill="#e9f5fb" stroke="#6d9fbd"/>
+  </g>
+  <text x="372" y="391" text-anchor="middle" class="label">Traction Battery</text>
+  <text x="372" y="424" text-anchor="middle" class="body">Supply / absorb energy</text>
+  <text x="372" y="452" text-anchor="middle" class="body">State update: SOC</text>
+  <text x="700" y="391" text-anchor="middle" class="label">Battery Thermal Model</text>
+  <text x="700" y="424" text-anchor="middle" class="body">Heat generation &amp; loss</text>
+  <text x="700" y="452" text-anchor="middle" class="body">State update: T<tspan baseline-shift="sub" font-size="12">bat</tspan></text>
+  <text x="1028" y="391" text-anchor="middle" class="label">Active Cooling</text>
+  <text x="1028" y="424" text-anchor="middle" class="body">Remove battery heat</text>
+  <text x="1028" y="452" text-anchor="middle" class="body">Demand: Q<tspan baseline-shift="super" font-size="12">bat</tspan><tspan baseline-shift="sub" font-size="12">cool</tspan></text>
+
+  <path class="flow" d="M372 350V310H675V258" stroke="#1774ad" marker-end="url(#arrow-blue)" marker-start="url(#arrow-blue)"/>
+  <text x="488" y="329" class="small">I<tspan baseline-shift="sub" font-size="10">bat</tspan> / SOC</text>
+  <path class="flow" d="M495 420H565" stroke="#7b58a5" marker-end="url(#arrow-purple)"/>
+  <text x="530" y="403" text-anchor="middle" class="small">I²R HEAT</text>
+  <path class="flow" d="M825 420H895" stroke="#1774ad" marker-end="url(#arrow-blue)"/>
+  <text x="860" y="403" text-anchor="middle" class="small">HEAT REMOVAL</text>
+
+  <rect x="55" y="545" width="1290" height="205" rx="22" fill="#fff" stroke="#d6b692" stroke-width="2" stroke-dasharray="9 7"/>
+  <g filter="url(#shadow)">
+    <rect class="node" x="90" y="590" width="245" height="115" rx="17" fill="#f4f6f8" stroke="#a7b2bc"/>
+    <rect class="node" x="410" y="572" width="500" height="150" rx="20" fill="#fff3e9" stroke="#d49a6c"/>
+    <rect class="node" x="985" y="590" width="300" height="115" rx="17" fill="#f8f4f0" stroke="#bea78f"/>
+  </g>
+  <text x="212" y="622" text-anchor="middle" class="label">Control Objectives</text>
+  <text x="212" y="653" text-anchor="middle" class="body">Minimize fuel use</text>
+  <text x="212" y="678" text-anchor="middle" class="body">Maintain SOC · limit T<tspan baseline-shift="sub" font-size="12">bat</tspan></text>
+  <text x="660" y="610" text-anchor="middle" class="label">Energy Management Controller</text>
+  <text x="660" y="644" text-anchor="middle" class="title" font-size="23">CD-CS · ECMS · Thermal ECMS</text>
+  <text x="660" y="681" text-anchor="middle" class="body">Power split optimization · thermal trade-off · constraints</text>
+  <text x="1135" y="622" text-anchor="middle" class="label">Control &amp; Feedback</text>
+  <text x="1135" y="653" text-anchor="middle" class="body">Inputs: P<tspan baseline-shift="sub" font-size="12">eng</tspan>, Q<tspan baseline-shift="super" font-size="12">bat</tspan><tspan baseline-shift="sub" font-size="12">cool</tspan></text>
+  <text x="1135" y="680" text-anchor="middle" class="body">States: SOC, T<tspan baseline-shift="sub" font-size="12">bat</tspan></text>
+
+  <path class="feedback" d="M335 648H400" marker-end="url(#arrow-navy)"/>
+  <path class="feedback" d="M975 648H920" marker-end="url(#arrow-navy)"/>
+  <path class="feedback" d="M505 572V530H175V258" marker-end="url(#arrow-navy)"/>
+  <path class="feedback" d="M815 572V530H1028V500" marker-end="url(#arrow-navy)"/>
+  <path class="feedback" d="M1135 590V525H372V500" marker-end="url(#arrow-navy)"/>
+
+  <g transform="translate(70 785)">
+    <path class="flow" d="M0 0H55" stroke="#e57d2b" marker-end="url(#arrow-orange)"/><text x="70" y="5" class="small">Mechanical energy</text>
+    <path class="flow" d="M250 0H305" stroke="#1774ad" marker-end="url(#arrow-blue)"/><text x="320" y="5" class="small">Electrical energy</text>
+    <path class="flow" d="M500 0H555" stroke="#7b58a5" marker-end="url(#arrow-purple)"/><text x="570" y="5" class="small">Thermal flow</text>
+    <path class="feedback" d="M735 0H790" marker-end="url(#arrow-navy)"/><text x="805" y="5" class="small">Control / feedback</text>
+  </g>
+</svg>
