@@ -12,10 +12,10 @@
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="#top">Rong Zhang</a>
       <div class="nav-links">
-        <a href="#about">About</a>
         <a href="#research">Research</a>
-        <a href="#experience">Experience</a>
         <a href="#publication">Publication</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -28,15 +28,25 @@
         <div>
           <div class="eyebrow">Research portfolio</div>
           <h1>Rong Zhang</h1>
+          <p class="hero-identity">B.Eng. candidate in Intelligent Vehicle Engineering · Hefei University of Technology · 2023–2027</p>
           <p class="hero-subtitle">Battery intelligence · Energy management · Autonomous robotics</p>
           <p class="hero-copy">I develop data-driven methods and intelligent control systems for electrified vehicles and mobile robots, combining experiments, time-series modeling, optimization, path planning, and engineering evaluation.</p>
           <div class="hero-actions">
             <a class="button" href="#research">View research</a>
             <a class="button secondary" href="https://github.com/zr057">GitHub profile</a>
+            <a class="button secondary" href="mailto:18994136236@163.com">Email</a>
           </div>
         </div>
       </div>
     </div>
+
+    <section class="highlights" aria-label="Research highlights">
+      <div class="container highlight-grid">
+        <div class="highlight"><strong>1</strong><span>first-author battery-health manuscript under revision</span></div>
+        <div class="highlight"><strong>3</strong><span>engineering projects spanning batteries, vehicles, and robotics</span></div>
+        <div class="highlight"><strong>2</strong><span>automotive placements in electronics and standardization</span></div>
+      </div>
+    </section>
 
     <section id="about">
       <div class="container">
@@ -72,6 +82,7 @@
               <div class="project-meta">Battery health · Research manuscript</div>
               <h3>Cross-Rate Lithium-Ion Battery SOH Prediction</h3>
               <p>A GJO-TCN-Transformer transfer-learning framework that transfers degradation knowledge from public datasets to high-rate automotive pouch cells.</p>
+              <p class="contribution"><strong>My contribution:</strong> high-rate cell experiments, health-feature engineering, model development, transfer-learning validation, and first-author manuscript preparation.</p>
               <div class="project-tags">
                 <span class="tag">MATLAB</span>
                 <span class="tag">TCN</span>
@@ -90,6 +101,7 @@
               <div class="project-meta">Electrified vehicles · Control and optimization</div>
               <h3>PHEV Energy and Thermal Management</h3>
               <p>A simulation and evaluation framework comparing CD-CS, ECMS, Thermal ECMS, and dynamic programming under the CLTC-P driving cycle.</p>
+              <p class="contribution"><strong>My contribution:</strong> vehicle-demand and component modeling, controller implementation, parameter studies, quantitative evaluation, and visualization.</p>
               <div class="project-tags">
                 <span class="tag">Python</span>
                 <span class="tag">ECMS</span>
@@ -109,6 +121,7 @@
               <div class="project-meta">Mobile robotics · Planning and control</div>
               <h3>FollowMe Autonomous Shopping Cart</h3>
               <p>A physical mobile-robot prototype integrating indoor mapping, A* global planning, local obstacle avoidance, and differential-drive trajectory control.</p>
+              <p class="contribution"><strong>My contribution:</strong> project leadership, A* planning, planner-control integration, physical testing, and trajectory-error analysis.</p>
               <div class="project-tags">
                 <span class="tag">ROS</span>
                 <span class="tag">SLAM</span>
@@ -118,6 +131,32 @@
               <a class="project-link" href="projects/follow-me-shopping-robot.html">View project →</a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publication">
+      <div class="container">
+        <div class="eyebrow">Publication</div>
+        <h2>First-author manuscript</h2>
+        <div class="publication">
+          <p><strong>Rong Zhang</strong>, Xilong Li, and Hai Wang. “Health Prediction of Lithium-ion Batteries via Cross-Rate Transfer Learning Based on a TCN-Transformer Model.”</p>
+          <p class="status">First-round peer review completed; revised manuscript submitted to the <em>Journal of The Electrochemical Society</em>, JES-116943.R1, 2026. DOI not yet available.</p>
+          <p><a class="project-link" href="projects/battery-soh.html">See methods, data scope, and results →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="eyebrow">Education</div>
+        <h2>Academic background</h2>
+        <div class="education-row">
+          <div>
+            <h3>Hefei University of Technology</h3>
+            <p>Bachelor of Engineering candidate in Intelligent Vehicle Engineering</p>
+          </div>
+          <div class="education-date">Sep 2023 – Jun 2027</div>
         </div>
       </div>
     </section>
@@ -135,7 +174,7 @@
             </div>
             <div class="project-meta">Jul–Aug 2025 · Automotive electronics · Nanjing</div>
             <h3>FORVIA HELLA Electronics</h3>
-            <p>Learned intelligent projection-headlamp validation through eight scenario-based pattern tests, defect tracking, fix verification, and technical-manual preparation. Built skills in vehicle-feature benchmarking, data cross-checking, BMS fundamentals, and bilingual engineering communication.</p>
+            <p>Supported intelligent projection-headlamp validation through eight scenario-based pattern tests, defect tracking, fix verification, and technical-manual preparation. Also benchmarked vehicle features and prepared bilingual engineering records.</p>
           </article>
 
           <article class="experience-card">
@@ -145,7 +184,7 @@
             </div>
             <div class="project-meta">Jul–Aug 2026 · Automotive standards · Industry research</div>
             <h3>CATARC Standards Institute</h3>
-            <p>Learned how intelligent-connected-vehicle and EMC standards translate into vehicle tests by comparing ISO and GB documents, checking technical requirements, and observing validation workflows. Developed skills in standards research, technical-document review, structured reporting, and technical meeting support.</p>
+            <p>Compared ISO and GB documents, checked technical requirements for intelligent-connected-vehicle and EMC standards, and supported standards research, document review, structured reporting, and technical meetings.</p>
 
             <figure class="experience-card-photo">
               <img src="assets/automotive-industry-visit.jpg" alt="Automotive industry visit at Great Wall Motor during the CATARC internship">
@@ -156,23 +195,12 @@
       </div>
     </section>
 
-    <section id="publication">
-      <div class="container">
-        <div class="eyebrow">Publication</div>
-        <h2>Manuscript</h2>
-        <div class="publication">
-          <p><strong>Rong Zhang</strong>, Xilong Li, and Hai Wang. “Health Prediction of Lithium-ion Batteries via Cross-Rate Transfer Learning Based on a TCN-Transformer Model.”</p>
-          <p class="status">Manuscript under revision at the <em>Journal of The Electrochemical Society</em>, JES-116943.R1, 2026. DOI not yet available.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="contact">
       <div class="container">
         <div class="eyebrow">Contact</div>
         <h2>Get in touch</h2>
         <div class="contact-panel">
-          <p>For questions about my projects, please contact me through <a href="https://github.com/zr057">GitHub</a>.</p>
+          <p>Email me at <a href="mailto:18994136236@163.com">18994136236@163.com</a>, or explore my work on <a href="https://github.com/zr057">GitHub</a>. A current CV is available upon request.</p>
         </div>
       </div>
     </section>

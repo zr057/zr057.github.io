@@ -26,9 +26,11 @@
             <li>Built a longitudinal power-demand model for the CLTC-P driving cycle.</li>
             <li>Modeled fuel consumption, motor efficiency, SOC, and first-order battery thermal dynamics.</li>
             <li>Implemented CD-CS, ECMS, and thermal-constrained ECMS.</li>
-            <li>Used dynamic programming as a global optimization benchmark.</li>
+            <li>Explored dynamic programming as a separate global-optimization reference.</li>
             <li>Evaluated fuel use, electrical energy, terminal SOC, peak temperature, and temperature-limit violations.</li>
           </ul>
+          <h2>My contribution</h2>
+          <p>I implemented the vehicle-demand, fuel-use, motor-efficiency, SOC, and first-order thermal models; coded the control strategies; ran parameter studies; and prepared the quantitative comparisons and figures.</p>
         </div>
         <aside class="detail-panel">
           <h2>Methods</h2>
@@ -50,7 +52,7 @@
           <article class="process-step"><span>01</span><h3>Driving demand</h3><p>CLTC-P speed and acceleration were converted into traction power using longitudinal vehicle dynamics.</p></article>
           <article class="process-step"><span>02</span><h3>Component models</h3><p>Engine fuel use, motor efficiency, battery SOC, and first-order thermal behavior were modeled.</p></article>
           <article class="process-step"><span>03</span><h3>Control design</h3><p>CD-CS, ECMS, and temperature-aware ECMS allocated power between the engine and battery.</p></article>
-          <article class="process-step"><span>04</span><h3>Benchmarking</h3><p>Dynamic programming provided a global-optimization reference for evaluating online strategies.</p></article>
+          <article class="process-step"><span>04</span><h3>Benchmarking</h3><p>A separate dynamic-programming study provided an exploratory global-optimization reference.</p></article>
         </div>
       </div>
 
@@ -58,13 +60,13 @@
         <div>
           <div class="eyebrow">Control methods</div>
           <h2>Four complementary strategies</h2>
-          <p class="section-copy">The comparison progresses from rule-based control to real-time optimization, thermal-aware control, and a global benchmark.</p>
+          <p class="section-copy">The work progresses from rule-based control to real-time optimization and thermal-aware control, with dynamic programming studied separately as a global reference.</p>
         </div>
         <div class="method-list">
           <article><strong>CD-CS</strong><p>Switches between charge-depleting and charge-sustaining modes using SOC thresholds.</p></article>
           <article><strong>ECMS</strong><p>Converts battery energy into equivalent fuel use and optimizes instantaneous power allocation.</p></article>
           <article><strong>Thermal ECMS</strong><p>Adds a temperature-dependent penalty to reduce battery loading at elevated temperatures.</p></article>
-          <article><strong>Dynamic programming</strong><p>Uses SOC and battery temperature as states to estimate a global optimization benchmark.</p></article>
+          <article><strong>Dynamic programming</strong><p>Uses SOC and battery temperature as states in a separate exploratory benchmark; its result is not included in the online-strategy table below.</p></article>
         </div>
       </div>
 
@@ -75,8 +77,8 @@
       <div class="container detail-section">
         <div class="section-heading">
           <div class="eyebrow">Simulation study</div>
-          <h2>Representative comparison</h2>
-          <p>Baseline condition: 30 CLTC-P cycles, 35 °C ambient temperature, initial SOC of 0.60, ECMS equivalence factor of 1.6, and thermal penalty weight of 5.0.</p>
+          <h2>Representative online-strategy runs</h2>
+          <p>Baseline condition: 30 CLTC-P cycles, 35 °C ambient temperature, initial SOC of 0.60, ECMS equivalence factor of 1.6, and thermal penalty weight of 5.0. Because the runs end at different SOC values, these figures describe controller and thermal behavior and should not be read as a charge-sustaining fuel-efficiency ranking.</p>
         </div>
         <div class="table-wrap">
           <table class="data-table results-table">
@@ -88,7 +90,7 @@
             </tbody>
           </table>
         </div>
-        <div class="insight-box"><strong>Engineering takeaway.</strong> Under the selected parameters, Thermal ECMS limited the peak battery temperature to 35.0 °C while keeping terminal SOC closer to its initial value than the other online strategies.</div>
+        <div class="insight-box"><strong>Engineering takeaway.</strong> Under the selected parameters, Thermal ECMS limited peak battery temperature to 35.0 °C and ended closer to the initial SOC than the other online runs. A fair efficiency ranking requires matched terminal SOC or an explicit terminal-SOC correction.</div>
       </div>
 
       <div class="container detail-section detail-grid">
