@@ -3,13 +3,13 @@
   <desc id="desc">English system diagram showing the series hybrid energy path, battery thermal model, cooling system, control objectives, energy management controller, and feedback variables.</desc>
   <defs>
     <style>
-      .title{font:700 26px "Segoe UI",Arial,sans-serif;fill:#102d49}.label{font:700 21px "Segoe UI",Arial,sans-serif;fill:#18364f}.body{font:18px "Segoe UI",Arial,sans-serif;fill:#52677a}.small{font:700 15px "Segoe UI",Arial,sans-serif;fill:#53697c}.flow{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.feedback{fill:none;stroke:#315b7d;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.node{stroke-width:2}.tag{font:700 15px "Segoe UI",Arial,sans-serif;fill:#fff;letter-spacing:.4px}
+      .title{font:700 26px "Segoe UI",Arial,sans-serif;fill:#102d49}.label{font:700 21px "Segoe UI",Arial,sans-serif;fill:#18364f}.body{font:18px "Segoe UI",Arial,sans-serif;fill:#52677a}.small{font:700 15px "Segoe UI",Arial,sans-serif;fill:#53697c}.flow{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.feedback{fill:none;stroke:#315b7d;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.node{stroke-width:2}.tag{font:700 15px "Segoe UI",Arial,sans-serif;fill:#fff;letter-spacing:.4px}
     </style>
-    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e57d2b"/></marker>
-    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1774ad"/></marker>
-    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4c9a62"/></marker>
-    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7b58a5"/></marker>
-    <marker id="arrow-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#315b7d"/></marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e57d2b"/></marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1774ad"/></marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4c9a62"/></marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7b58a5"/></marker>
+    <marker id="arrow-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#315b7d"/></marker>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#17334d" flood-opacity=".10"/></filter>
   </defs>
 
@@ -85,9 +85,10 @@
 
   <path class="feedback" d="M335 648H400" marker-end="url(#arrow-navy)"/>
   <path class="feedback" d="M975 648H920" marker-end="url(#arrow-navy)"/>
-  <path class="feedback" d="M505 572V530H175V258" marker-end="url(#arrow-navy)"/>
-  <path class="feedback" d="M815 572V530H1028V500" marker-end="url(#arrow-navy)"/>
-  <path class="feedback" d="M1135 590V525H372V500" marker-end="url(#arrow-navy)"/>
+  <path class="feedback" d="M410 610H360V520H175V258" marker-end="url(#arrow-navy)"/>
+  <path class="feedback" d="M910 610H950V520H1028V500" marker-end="url(#arrow-navy)"/>
+  <path class="feedback" d="M372 490V540H560V572" marker-end="url(#arrow-navy)"/>
+  <path class="feedback" d="M700 490V572" marker-end="url(#arrow-navy)"/>
 
   <g transform="translate(70 785)">
     <path class="flow" d="M0 0H55" stroke="#e57d2b" marker-end="url(#arrow-orange)"/><text x="70" y="5" class="small">Mechanical energy</text>
