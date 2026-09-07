@@ -3,91 +3,133 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rong Zhang's cross-rate lithium-ion battery SOH research: high-rate pouch-cell experiments, transfer learning, GJO-TCN-Transformer modeling, and cross-battery evaluation.">
   <title>Cross-Rate Battery SOH Prediction | Rong Zhang</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav"><a class="brand" href="../index.html">Rong Zhang</a><div class="nav-links"><a href="../index.html#research">Research</a><a href="../index.html#publication">Publication</a><a href="../index.html#contact">Contact</a></div></nav></header>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="../index.html">Rong Zhang</a>
+      <div class="nav-links"><a href="#overview">Overview</a><a href="#experiment">Experiment</a><a href="#method">Method</a><a href="#results">Results</a><a href="#reproducibility">Reproducibility</a></div>
+    </nav>
+  </header>
+
   <main>
-    <div class="detail-hero">
+    <div class="detail-hero battery-detail-hero">
       <div class="container">
         <a class="back-link" href="../index.html#research">← Back to projects</a>
-        <div class="eyebrow">Battery health · Transfer learning</div>
+        <div class="eyebrow">Battery health · Transfer learning · First-author research</div>
         <h1>Cross-Rate Lithium-Ion Battery SOH Prediction</h1>
-        <p class="detail-lead">A GJO-TCN-Transformer framework for transferring degradation knowledge from multi-source public datasets to high-rate pouch-cell state-of-health prediction.</p>
+        <p class="detail-lead">A GJO-TCN-Transformer framework that transfers degradation knowledge from eight public cells to high-rate automotive pouch cells when full-life target data are limited.</p>
+        <div class="hero-actions">
+          <a class="button" href="#results">View results</a>
+          <a class="button secondary" href="#method">Explore methodology</a>
+        </div>
       </div>
     </div>
 
-    <section>
-      <div class="container detail-grid">
-        <div class="detail-panel">
-          <h2>Research question</h2>
-          <p>Can knowledge learned from public battery datasets support accurate full-life SOH prediction when labeled high-rate automotive pouch-cell data are limited?</p>
-          <h2>My contribution</h2>
-          <p>I conducted full-life high-rate tests on three pouch cells, prepared the target-domain dataset, engineered and screened health features, developed the GJO-TCN-Transformer workflow, ran cross-battery validation, and led the first-author manuscript preparation.</p>
-          <h2>Approach</h2>
-          <ul>
-            <li>Pre-trained a source-domain model using eight public cells.</li>
-            <li>Used a TCN to capture local degradation patterns and a Transformer to model long-term dependencies.</li>
-            <li>Applied Golden Jackal Optimization to tune target-domain adaptation.</li>
-            <li>Evaluated four cross-battery transfer settings using three laboratory pouch cells.</li>
-          </ul>
+    <section id="overview">
+      <div class="container project-facts" aria-label="Project facts">
+        <div><span>Role</span><strong>First author and lead researcher</strong></div>
+        <div><span>Study period</span><strong>Jul 2025 – Sep 2026</strong></div>
+        <div><span>Target cells</span><strong>3 LG NMC32 pouch cells</strong></div>
+        <div><span>Implementation</span><strong>MATLAB</strong></div>
+      </div>
+
+      <div class="container detail-grid detail-section">
+        <div class="detail-panel compact-panel">
+          <div class="eyebrow">Research problem</div>
+          <h2>Why cross-rate transfer matters</h2>
+          <p>Fast-charging experiments are expensive and time-consuming, while models trained only on public low-rate or small-cell datasets may not generalize to large-format pouch cells. The study asks whether multi-source degradation knowledge can support accurate full-life SOH prediction with limited labeled high-rate data.</p>
         </div>
-        <aside class="detail-panel">
-          <h2>Reported results</h2>
-          <p>The proposed model achieved the lowest reported MAE, RMSE, and MAPE in all four transfer settings in the manuscript.</p>
-          <div class="metrics">
-            <div class="metric"><strong>8</strong>source cells</div>
-            <div class="metric"><strong>3</strong>target cells</div>
-            <div class="metric"><strong>0.319–0.444%</strong>MAPE</div>
-          </div>
-          <p class="status">First-round peer review completed; revised manuscript submitted to the <em>Journal of The Electrochemical Society</em>.</p>
+        <aside class="detail-panel compact-panel">
+          <div class="eyebrow">My contribution</div>
+          <h2>From experiment to manuscript</h2>
+          <ul>
+            <li>Conducted full-life high-rate aging tests on three pouch cells.</li>
+            <li>Prepared the target dataset and engineered degradation-sensitive health features.</li>
+            <li>Developed and validated the GJO-TCN-Transformer transfer workflow.</li>
+            <li>Organized results and led the first-author manuscript revision.</li>
+          </ul>
         </aside>
       </div>
 
-      <div class="container detail-section">
+      <div class="container result-strip" aria-label="Reported research results">
+        <div><strong>8</strong><span>public source cells</span></div>
+        <div><strong>3</strong><span>laboratory target cells</span></div>
+        <div><strong>4</strong><span>cross-battery settings</span></div>
+        <div><strong>0.319–0.444%</strong><span>reported MAPE range</span></div>
+      </div>
+
+      <div id="experiment" class="container detail-section">
         <div class="section-heading">
-          <div class="eyebrow">Research design</div>
-          <h2>From public-cell knowledge to high-rate prediction</h2>
-          <p>The study separates broad degradation-pattern learning from target-cell adaptation, allowing the model to use limited high-rate aging data more efficiently.</p>
+          <div class="eyebrow">Experimental foundation</div>
+          <h2>High-rate pouch-cell aging dataset</h2>
+          <p>Three commercial LG NMC32 pouch cells were cycled in a temperature-controlled chamber. Voltage, current, capacity, and temperature were recorded across the aging process to form the target domain.</p>
         </div>
-        <div class="process-grid">
-          <article class="process-step"><span>01</span><h3>Source data</h3><p>Health features were extracted from eight cells across NASA, CALCE, and XJTU datasets.</p></article>
-          <article class="process-step"><span>02</span><h3>Feature screening</h3><p>Pearson correlation analysis was used to retain degradation-sensitive health indicators.</p></article>
-          <article class="process-step"><span>03</span><h3>Sequence learning</h3><p>A TCN captured local temporal patterns while a Transformer modeled long-term dependencies.</p></article>
-          <article class="process-step"><span>04</span><h3>Target adaptation</h3><p>TCN parameters were frozen and GJO-guided fine-tuning adapted the model to a high-rate pouch cell.</p></article>
+        <div class="gallery two gallery-contained">
+          <figure><img loading="lazy" src="../assets/battery-chamber.jpg" alt="Pouch cells installed in a temperature-controlled chamber"><figcaption>Temperature-controlled chamber used for the high-rate aging experiments.</figcaption></figure>
+          <figure><img loading="lazy" src="../assets/battery-experiment.jpg" alt="Instrumented LG NMC32 pouch cell"><figcaption>Instrumented pouch cell with electrical connections and temperature measurement.</figcaption></figure>
         </div>
       </div>
 
       <div class="container detail-section split-section">
         <div>
-          <div class="eyebrow">Data</div>
+          <div class="eyebrow">Data strategy</div>
           <h2>Source and target domains</h2>
-          <p class="section-copy">The source domain provides diverse degradation patterns; the target domain tests transfer to large-format cells under high-rate aging.</p>
+          <p class="section-copy">The source domain supplies diverse degradation patterns. The laboratory target domain tests whether those patterns transfer across cell format and charging rate.</p>
         </div>
         <div class="table-wrap">
           <table class="data-table">
             <thead><tr><th>Domain</th><th>Cells</th><th>Purpose</th></tr></thead>
             <tbody>
-              <tr><td>NASA</td><td>B5, B6, B7</td><td>Source feature learning</td></tr>
-              <tr><td>CALCE</td><td>C35, C36, C37</td><td>Source feature learning</td></tr>
-              <tr><td>XJTU</td><td>D1, D2</td><td>Source feature learning</td></tr>
-              <tr><td>Laboratory pouch cells</td><td>Battery 1, 2, 3</td><td>Fine-tuning and evaluation</td></tr>
+              <tr><td>NASA</td><td>B5, B6, B7</td><td>Source-domain learning</td></tr>
+              <tr><td>CALCE</td><td>C35, C36, C37</td><td>Source-domain learning</td></tr>
+              <tr><td>XJTU</td><td>D1, D2</td><td>Source-domain learning</td></tr>
+              <tr><td>Laboratory pouch cells</td><td>Battery 1, 2, 3</td><td>Fine-tuning and cross-battery evaluation</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <div class="container gallery two">
-        <figure><img src="../assets/battery-experiment.jpg" alt="Instrumented pouch cell"><figcaption>Instrumented pouch cell used for high-rate aging tests.</figcaption></figure>
-        <figure><img src="../assets/battery-soh-result.png" alt="Cross-battery SOH prediction result"><figcaption>Example cross-battery prediction showing the proposed model and baseline trajectories.</figcaption></figure>
+      <div id="method" class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Research workflow</div>
+          <h2>From raw cycling data to target-cell prediction</h2>
+          <p>The workflow separates broad degradation-pattern learning from target-domain adaptation so that limited high-rate labels can be used efficiently.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><span>01</span><h3>Prepare data</h3><p>Align cycling records and derive health indicators from voltage, current, capacity, and degradation behavior.</p></article>
+          <article class="process-step"><span>02</span><h3>Screen features</h3><p>Use Pearson correlation analysis to retain indicators that track capacity decline.</p></article>
+          <article class="process-step"><span>03</span><h3>Pre-train</h3><p>Learn shared temporal degradation patterns from eight cells across three public datasets.</p></article>
+          <article class="process-step"><span>04</span><h3>Transfer and test</h3><p>Freeze TCN parameters, tune the target model with GJO, and predict the full life of another pouch cell.</p></article>
+        </div>
       </div>
 
-      <div class="container detail-section">
+      <div class="container detail-section detail-grid">
+        <div class="detail-panel compact-panel">
+          <div class="eyebrow">Model architecture</div>
+          <h2>Complementary sequence modeling</h2>
+          <div class="method-list">
+            <article><strong>Temporal Convolutional Network</strong><p>Captures local degradation patterns with causal temporal convolutions.</p></article>
+            <article><strong>Transformer Encoder</strong><p>Models long-range dependencies across the battery aging sequence.</p></article>
+            <article><strong>Golden Jackal Optimization</strong><p>Searches key target-domain hyperparameters used during adaptation.</p></article>
+          </div>
+        </div>
+        <aside class="detail-panel compact-panel">
+          <div class="eyebrow">Transfer protocol</div>
+          <h2>Cross-cell validation</h2>
+          <p>One target cell supplies limited fine-tuning data, with a 90%/10% training-validation split described in the project materials. The adapted model then predicts another cell's full SOH trajectory.</p>
+          <p>Four directions were evaluated: Battery 1→2, Battery 1→3, Battery 2→1, and Battery 3→1.</p>
+        </aside>
+      </div>
+
+      <div id="results" class="container detail-section">
         <div class="section-heading">
           <div class="eyebrow">Evaluation</div>
           <h2>Cross-battery prediction results</h2>
-          <p>The proposed model achieved the lowest reported MAE, RMSE, and MAPE across all four transfer settings in the manuscript.</p>
+          <p>The proposed GJO-TCN-Transformer reported the lowest MAE, RMSE, and MAPE among the three compared models in all four transfer settings.</p>
         </div>
         <div class="table-wrap">
           <table class="data-table results-table">
@@ -100,24 +142,47 @@
             </tbody>
           </table>
         </div>
-        <div class="insight-box"><strong>Interpretation.</strong> The prediction curves remain close to the measured SOH trajectory during nonlinear late-life degradation, where the baseline models show larger fluctuations.</div>
+        <div class="insight-box"><strong>Result interpretation.</strong> The proposed model remains close to the measured SOH trajectory through nonlinear late-life degradation, where the two baselines show larger fluctuations. Values shown here are reported from the revised manuscript.</div>
       </div>
 
-      <div class="container detail-section detail-grid">
+      <div class="container detail-section prediction-section">
+        <div class="section-heading">
+          <div class="eyebrow">Prediction evidence</div>
+          <h2>Full-life SOH trajectories</h2>
+          <p>Each plot compares the proposed model with TCN-Transformer and Transformer baselines against the measured SOH trajectory.</p>
+        </div>
+        <img class="plot-legend" src="../assets/battery-soh-legend.png" alt="Legend for SOH prediction plots">
+        <div class="gallery two gallery-contained prediction-gallery">
+          <figure><img loading="lazy" src="../assets/battery-soh-result.png" alt="SOH prediction from Battery 1 to Battery 2"><figcaption>Fine-tune on Battery 1 · Predict Battery 2</figcaption></figure>
+          <figure><img loading="lazy" src="../assets/battery-soh-b1-b3.png" alt="SOH prediction from Battery 1 to Battery 3"><figcaption>Fine-tune on Battery 1 · Predict Battery 3</figcaption></figure>
+          <figure><img loading="lazy" src="../assets/battery-soh-b2-b1.png" alt="SOH prediction from Battery 2 to Battery 1"><figcaption>Fine-tune on Battery 2 · Predict Battery 1</figcaption></figure>
+          <figure><img loading="lazy" src="../assets/battery-soh-b3-b1.png" alt="SOH prediction from Battery 3 to Battery 1"><figcaption>Fine-tune on Battery 3 · Predict Battery 1</figcaption></figure>
+        </div>
+      </div>
+
+      <div id="reproducibility" class="container detail-section detail-grid">
         <div class="detail-panel compact-panel">
-          <h2>Technical contribution</h2>
+          <div class="eyebrow">Research contribution</div>
+          <h2>What the study demonstrates</h2>
           <ul>
-            <li>Connected multi-source pre-training with cross-rate, cross-cell transfer.</li>
-            <li>Combined local and long-range temporal feature modeling.</li>
-            <li>Used population-based optimization to support target-domain adaptation.</li>
-            <li>Validated the method under four train-to-test cell combinations.</li>
+            <li>Multi-source pre-training can support cross-rate, cross-cell transfer.</li>
+            <li>Local and long-range temporal modeling are combined in one architecture.</li>
+            <li>Target-domain optimization supports adaptation with limited labeled data.</li>
+            <li>Performance is checked across four train-to-test cell directions.</li>
           </ul>
         </div>
         <aside class="detail-panel compact-panel">
-          <h2>Reproducibility scope</h2>
-          <p>Selected MATLAB scripts cover the model architecture, baselines, optimization functions, evaluation utilities, and plotting workflow.</p>
-          <p class="status">Raw laboratory data, third-party datasets, and trained weights are not distributed. Reported values are taken from the manuscript.</p>
+          <div class="eyebrow">Reproducibility</div>
+          <h2>Public scope and boundaries</h2>
+          <p>Selected MATLAB scripts cover the proposed architecture, baseline models, GJO functions, evaluation utilities, and plotting workflow.</p>
+          <p class="status">Raw laboratory data, third-party datasets, trained weights, and the research code are not distributed through this public page. The page therefore documents the methodology and reported evidence rather than offering full end-to-end reproduction.</p>
         </aside>
+      </div>
+
+      <div class="container detail-section publication-note">
+        <div class="eyebrow">Publication status</div>
+        <h2>Revised manuscript submitted</h2>
+        <p><strong>Rong Zhang</strong>, Xilong Li, and Hai Wang. “Health Prediction of Lithium-ion Batteries via Cross-Rate Transfer Learning Based on a TCN-Transformer Model.” First-round peer review completed; revised manuscript submitted to the <em>Journal of The Electrochemical Society</em>, JES-116943.R1, 2026. DOI not yet available.</p>
       </div>
     </section>
   </main>
