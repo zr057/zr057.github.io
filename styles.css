@@ -143,6 +143,10 @@ section { padding: 72px 0; }
 .project-media.single { grid-template-columns: 1fr; }
 .project-media img { width: 100%; height: 100%; min-height: 330px; object-fit: cover; }
 .project-media img.plot { object-fit: contain; background: #fff; padding: 8px; }
+.project-media.battery-cover { grid-template-columns: 1fr; grid-template-rows: 180px 240px; gap: 14px; padding: 20px; background: #edf3f8; align-content: center; }
+.project-media.battery-cover img { min-height: 0; border-radius: 10px; }
+.project-media.battery-cover img:first-child { object-position: center 54%; }
+.project-media.battery-cover img.plot { padding: 10px; border: 1px solid #dce5ee; }
 .project-content { padding: 36px 34px; display: flex; flex-direction: column; justify-content: center; }
 .project-meta { margin-bottom: 10px; color: var(--blue); font-size: .84rem; font-weight: 750; text-transform: uppercase; letter-spacing: .08em; }
 .project-content p { margin: 0 0 18px; color: var(--muted); }
