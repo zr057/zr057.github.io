@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FollowMe autonomous shopping-cart research project by Rong Zhang: mapping, path planning, obstacle avoidance, and motion control.">
+  <meta name="description" content="FollowMe autonomous shopping-cart research project by Rong Zhang: path planning, obstacle avoidance, and motion control.">
   <title>FollowMe Autonomous Shopping Cart | Rong Zhang</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -26,10 +26,10 @@
       <div class="container detail-grid">
         <div class="detail-panel">
           <h2>Project outcome</h2>
-          <p>The project began with the electric and sensor modification of a green folding shopping cart. The team later adopted a four-wheel mobile platform to evaluate indoor mapping, repeat localization, path tracking, and corridor obstacle avoidance.</p>
+          <p>The project began with the electric and sensor modification of a green folding shopping cart. The team later adopted a four-wheel mobile platform to evaluate path planning, trajectory tracking, and corridor obstacle avoidance.</p>
           <ul>
             <li>Built and integrated a differential-drive shopping-cart prototype.</li>
-            <li>Created a LiDAR-based indoor occupancy map for navigation.</li>
+            <li>Integrated LiDAR hardware and prepared occupancy-grid inputs for planning.</li>
             <li>Implemented grid-based global planning and local obstacle avoidance.</li>
             <li>Connected planning output with closed-loop chassis control.</li>
           </ul>
@@ -58,14 +58,14 @@
             <li>Designed the grid-based A* global-planning workflow.</li>
             <li>Implemented eight-neighbor search, obstacle constraints, path reconstruction, and path simplification.</li>
             <li>Participated in global-local planner integration.</li>
-            <li>Coordinated mapping, planning, and chassis-control interfaces.</li>
-            <li>Organized simulation and physical testing and analyzed trajectory and localization errors.</li>
+            <li>Coordinated planning and chassis-control interfaces.</li>
+            <li>Organized simulation and physical testing and analyzed trajectory errors.</li>
           </ul>
         </div>
         <aside class="detail-panel compact-panel">
           <h2>Technical stack</h2>
           <div class="chips">
-            <span class="chip">ROS</span><span class="chip">LiDAR</span><span class="chip">SLAM</span><span class="chip">A*</span><span class="chip">Local planning</span><span class="chip">PID control</span>
+            <span class="chip">ROS</span><span class="chip">LiDAR</span><span class="chip">A*</span><span class="chip">Local planning</span><span class="chip">PID control</span>
           </div>
           <p class="status">Undergraduate Innovation Training Project, Hefei University of Technology · May 2025–April 2026.</p>
         </aside>
@@ -85,20 +85,20 @@
       <div class="container detail-section">
         <div class="section-heading">
           <div class="eyebrow">System workflow</div>
-          <h2>From environment sensing to chassis motion</h2>
-          <p>The navigation pipeline connects perception, mapping, planning, and control in a closed physical loop.</p>
+          <h2>From environment representation to chassis motion</h2>
+          <p>The verified planning workflow connects sensor inputs, occupancy-grid representation, global-local planning, and closed-loop control.</p>
         </div>
         <div class="process-grid">
           <article class="process-step"><span>01</span><h3>Sense</h3><p>LiDAR and odometry capture the surrounding geometry and robot state.</p></article>
-          <article class="process-step"><span>02</span><h3>Map and localize</h3><p>SLAM builds a two-dimensional occupancy map and estimates robot pose.</p></article>
+          <article class="process-step"><span>02</span><h3>Represent</h3><p>A binary occupancy grid marks free space and obstacles for route generation.</p></article>
           <article class="process-step"><span>03</span><h3>Plan</h3><p>A* generates the global route while local planning reacts to nearby obstacles.</p></article>
           <article class="process-step"><span>04</span><h3>Control</h3><p>Closed-loop control converts path error into differential wheel commands.</p></article>
         </div>
       </div>
 
       <div class="container gallery two">
-        <figure><img src="../assets/followme-rviz-map.png" alt="Indoor occupancy map in RViz"><figcaption>LiDAR-based indoor occupancy map displayed in RViz.</figcaption></figure>
-        <figure><img src="../assets/followme-architecture.png" alt="FollowMe project technical route"><figcaption>Project-level technical route linking chassis, sensing, planning, and interaction modules.</figcaption></figure>
+        <figure><img src="../assets/followme-astar-planning-demo.svg" alt="Reproducible A-star path-planning result"><figcaption>Reproducible A* result generated from the public reconstruction; this is not a historical ROS or RViz screenshot.</figcaption></figure>
+        <figure><img src="../assets/followme-architecture.png" alt="Original FollowMe project proposal roadmap"><figcaption>Original proposal roadmap, shown as intended project scope rather than proof of final integration.</figcaption></figure>
       </div>
 
       <div class="container detail-section detail-grid">
@@ -113,8 +113,8 @@
         </div>
         <aside class="detail-panel compact-panel">
           <h2>Evidence boundary</h2>
-          <p>The formal report indicates that the laser-based navigation chain was the primary implemented system. Visual target recognition and multimodal fusion were not fully integrated.</p>
-          <p class="status">The public repository contains a transparent reconstruction of the planning logic rather than the missing historical ROS workspace.</p>
+          <p>The archived RViz map came from proposal material and is intentionally excluded because it was not generated by the project vehicle. Visual target recognition and multimodal fusion were also not fully integrated.</p>
+          <p class="status">The planning figure above is regenerated from the public reconstruction and is not presented as output from the missing historical ROS workspace.</p>
           <p><a class="project-link" href="https://github.com/zr057/follow-me-shopping-robot">Explore the code and documentation →</a></p>
         </aside>
       </div>
