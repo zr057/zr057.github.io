@@ -15,7 +15,7 @@
         <a class="back-link" href="../index.html#research">← Back to projects</a>
         <div class="eyebrow">Mobile robotics · Planning and control</div>
         <h1>FollowMe Autonomous Shopping Cart</h1>
-        <p class="detail-lead">A two-stage indoor robotics project: the team first modified a green folding shopping cart, then transferred navigation, obstacle avoidance, and motion-control testing to a four-wheel mobile platform.</p>
+        <p class="detail-lead">A two-stage indoor robotics project: an initial green folding-cart conversion exposed hardware-integration limits, so navigation, obstacle avoidance, and motion-control validation moved to a purpose-built four-wheel mobile platform.</p>
         <div class="hero-actions">
           <a class="button" href="https://github.com/zr057/follow-me-shopping-robot">View GitHub repository</a>
         </div>
@@ -26,9 +26,9 @@
       <div class="container detail-grid">
         <div class="detail-panel">
           <h2>Project outcome</h2>
-          <p>The project began with the electric and sensor modification of a green folding shopping cart. The team later adopted a four-wheel mobile platform to evaluate path planning, trajectory tracking, and corridor obstacle avoidance.</p>
+          <p>The project began by adding drive hardware and LiDAR to a green folding shopping cart. Its consumer-grade folding structure, limited mounting rigidity, and inconsistent drive response made repeatable closed-loop experiments impractical. The conversion therefore remained an early integration attempt, and the team adopted a purpose-built four-wheel mobile platform for path-planning, trajectory-tracking, and corridor obstacle-avoidance tests.</p>
           <ul>
-            <li>Built and integrated a differential-drive shopping-cart prototype.</li>
+            <li>Used the green cart to identify mechanical, sensor-mounting, and drive-control integration constraints.</li>
             <li>Integrated LiDAR hardware and prepared occupancy-grid inputs for planning.</li>
             <li>Implemented grid-based global planning and local obstacle avoidance.</li>
             <li>Connected planning output with closed-loop chassis control.</li>
@@ -46,8 +46,8 @@
       </div>
 
       <div class="container gallery two">
-        <figure><img src="../assets/followme-prototype.png" alt="Initial green shopping-cart prototype"><figcaption>Stage 1 · Green folding shopping cart after differential-drive and LiDAR modification.</figcaption></figure>
-        <figure><img src="../assets/followme-corridor-test.jpg" alt="Later four-wheel mobile platform in a corridor obstacle-avoidance experiment"><figcaption>Stage 2 · Four-wheel mobile platform used for corridor navigation and obstacle-avoidance testing.</figcaption></figure>
+        <figure><img src="../assets/followme-prototype.png" alt="Early green shopping-cart integration attempt"><figcaption>Stage 1 · Green folding-cart conversion used for hardware integration; it did not become the final experimental platform.</figcaption></figure>
+        <figure><img src="../assets/followme-corridor-test.jpg" alt="Final four-wheel mobile platform in a corridor obstacle-avoidance experiment"><figcaption>Stage 2 · Purpose-built four-wheel mobile platform used for repeatable navigation and obstacle-avoidance testing.</figcaption></figure>
       </div>
 
       <div class="container detail-section detail-grid">
@@ -73,12 +73,12 @@
 
       <div class="container detail-section">
         <div class="section-heading">
-          <div class="eyebrow">Initial prototype</div>
-          <h2>LiDAR integration on the green shopping cart</h2>
-          <p>The first-stage prototype established the mechanical and sensing foundation before the project moved to the later four-wheel platform for navigation and control experiments.</p>
+          <div class="eyebrow">Platform iteration</div>
+          <h2>Why the project moved beyond the green cart</h2>
+          <p>The green cart was useful for testing LiDAR placement, wiring, and drive installation, but it did not provide the rigidity or repeatable motion needed for controlled navigation experiments. Rather than overstate this attempt as a successful prototype, the project transferred the sensing, planning, and control workflow to the four-wheel mechanical platform.</p>
         </div>
         <div class="gallery gallery-contained">
-          <figure><img loading="lazy" src="../assets/followme-lidar-integration.jpg" alt="LiDAR mounted on the autonomous shopping-cart prototype"><figcaption>LiDAR mounting and mechanical integration on the shopping-cart body.</figcaption></figure>
+          <figure><img loading="lazy" src="../assets/followme-lidar-integration.jpg" alt="LiDAR mounted during the early green-cart integration attempt"><figcaption>Early LiDAR mounting and mechanical integration work on the green cart.</figcaption></figure>
         </div>
       </div>
 
