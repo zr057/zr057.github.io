@@ -15,7 +15,7 @@
         <a class="back-link" href="../index.html#research">← Back to projects</a>
         <div class="eyebrow">Mobile robotics · Planning and control</div>
         <h1>FollowMe Autonomous Shopping Cart</h1>
-        <p class="detail-lead">A two-stage indoor robotics project: an initial green folding-cart conversion exposed hardware-integration limits, so navigation, obstacle avoidance, and motion-control validation moved to a purpose-built four-wheel mobile platform.</p>
+        <p class="detail-lead">A two-stage indoor robotics project that progressed from an exploratory green-cart conversion to a completed four-wheel experimental platform for indoor planning, tracking, and obstacle-avoidance validation.</p>
         <div class="hero-actions">
           <a class="button" href="https://github.com/zr057/follow-me-shopping-robot">View GitHub repository</a>
         </div>
@@ -26,12 +26,12 @@
       <div class="container detail-grid">
         <div class="detail-panel">
           <h2>Project outcome</h2>
-          <p>The project began by adding drive hardware and LiDAR to a green folding shopping cart. Its consumer-grade folding structure, limited mounting rigidity, and inconsistent drive response made repeatable closed-loop experiments impractical. The conversion therefore remained an early integration attempt, and the team adopted a purpose-built four-wheel mobile platform for path-planning, trajectory-tracking, and corridor obstacle-avoidance tests.</p>
+          <p>The project began by adding drive hardware and LiDAR to a green folding shopping cart. That conversion helped establish the mechanical layout and sensor-integration requirements, but its folding structure and drive response were not sufficiently repeatable for controlled navigation experiments. The team therefore transferred the system to a dedicated four-wheel mechanical platform and completed the final planning, trajectory-tracking, and corridor obstacle-avoidance tests on that vehicle.</p>
           <ul>
             <li>Used the green cart to identify mechanical, sensor-mounting, and drive-control integration constraints.</li>
-            <li>Integrated LiDAR hardware and prepared occupancy-grid inputs for planning.</li>
+            <li>Completed a four-wheel experimental platform with onboard computing, operator display, and front-mounted LiDAR.</li>
             <li>Implemented grid-based global planning and local obstacle avoidance.</li>
-            <li>Connected planning output with closed-loop chassis control.</li>
+            <li>Connected planning output with closed-loop chassis control and validated the system in an indoor corridor.</li>
           </ul>
         </div>
         <aside class="detail-panel">
@@ -45,9 +45,8 @@
         </aside>
       </div>
 
-      <div class="container gallery two">
+      <div class="container gallery gallery-contained">
         <figure><img src="../assets/followme-prototype.png" alt="Early green shopping-cart integration attempt"><figcaption>Stage 1 · Green folding-cart conversion used for hardware integration; it did not become the final experimental platform.</figcaption></figure>
-        <figure><img src="../assets/followme-corridor-test.jpg" alt="Final four-wheel mobile platform in a corridor obstacle-avoidance experiment"><figcaption>Stage 2 · Purpose-built four-wheel mobile platform used for repeatable navigation and obstacle-avoidance testing.</figcaption></figure>
       </div>
 
       <div class="container detail-section detail-grid">
@@ -75,10 +74,25 @@
         <div class="section-heading">
           <div class="eyebrow">Platform iteration</div>
           <h2>Why the project moved beyond the green cart</h2>
-          <p>The green cart was useful for testing LiDAR placement, wiring, and drive installation, but it did not provide the rigidity or repeatable motion needed for controlled navigation experiments. Rather than overstate this attempt as a successful prototype, the project transferred the sensing, planning, and control workflow to the four-wheel mechanical platform.</p>
+          <p>The green cart was useful for testing LiDAR placement, wiring, and drive installation, but it did not provide the rigidity or repeatable motion needed for controlled navigation experiments. Rather than treating that attempt as the final prototype, the project used the lessons from it to define a more stable mechanical platform.</p>
         </div>
         <div class="gallery gallery-contained">
           <figure><img loading="lazy" src="../assets/followme-lidar-integration.jpg" alt="LiDAR mounted during the early green-cart integration attempt"><figcaption>Early LiDAR mounting and mechanical integration work on the green cart.</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Final experimental platform</div>
+          <h2>The completed system used a dedicated four-wheel mechanical vehicle</h2>
+          <p>The final platform combined a rigid mobile chassis, front-mounted 2D LiDAR, onboard computing, and an integrated display and control interface. This configuration provided a consistent base for indoor route execution, trajectory tracking, and obstacle-avoidance experiments.</p>
+        </div>
+        <div class="gallery two gallery-contained">
+          <figure><img loading="lazy" src="../assets/followme-final-platform.jpg" alt="Completed four-wheel mobile robot with LiDAR and onboard computing"><figcaption>Completed platform · Four-wheel mechanical chassis with front-mounted LiDAR and onboard computing equipment.</figcaption></figure>
+          <figure><img loading="lazy" src="../assets/followme-final-experiment.jpg" alt="Completed mobile robot in the corridor experiment layout"><figcaption>Experiment layout · The completed robot facing a traffic-cone course in an indoor corridor.</figcaption></figure>
+        </div>
+        <div class="gallery gallery-contained">
+          <figure><img loading="lazy" src="../assets/followme-static-avoidance.jpg" alt="Completed mobile robot performing a static obstacle-avoidance test"><figcaption>Physical validation · Static obstacle-avoidance test on the completed four-wheel platform.</figcaption></figure>
         </div>
       </div>
 
