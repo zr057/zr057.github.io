@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FollowMe autonomous shopping-cart research project by Rong Zhang: path planning, obstacle avoidance, and motion control.">
+  <meta name="description" content="FollowMe autonomous shopping-cart research project by Rong Zhang: multi-sensor localization, path planning, autonomous following, and dynamic obstacle avoidance.">
   <title>FollowMe Autonomous Shopping Cart | Rong Zhang</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -13,134 +13,200 @@
     <div class="detail-hero">
       <div class="container">
         <a class="back-link" href="../index.html#research">← Back to projects</a>
-        <div class="eyebrow">Mobile robotics · Planning and control</div>
+        <div class="eyebrow">Mobile robotics · Multi-sensor localization · Motion planning</div>
         <h1>FollowMe Autonomous Shopping Cart</h1>
-        <p class="detail-lead">A two-stage indoor robotics project that progressed from an exploratory green-cart conversion to a completed four-wheel experimental platform for indoor planning, tracking, and obstacle-avoidance validation.</p>
+        <p class="detail-lead">An undergraduate robotics project integrating multi-sensor localization, global-local path planning, autonomous following, and dynamic obstacle avoidance for indoor retail environments.</p>
+        <p><strong>Project Lead · Path-Planning Development · System Integration · Experimental Analysis</strong></p>
         <div class="hero-actions">
-          <a class="button" href="https://github.com/zr057/follow-me-shopping-robot">View GitHub repository</a>
+          <a class="button" href="#technical-route">View technical route</a>
+          <a class="button secondary" href="https://github.com/zr057/follow-me-shopping-robot">View GitHub repository</a>
         </div>
       </div>
     </div>
 
     <section>
-      <div class="container detail-grid">
-        <div class="detail-panel">
-          <h2>Project outcome</h2>
-          <p>The project developed through two physical platforms: an early green-cart prototype for mechanical and sensor integration, followed by a dedicated four-wheel vehicle for final planning, trajectory-tracking, and corridor obstacle-avoidance experiments.</p>
-          <ul>
-            <li>Completed early LiDAR, wiring, and drive-layout integration on the green cart.</li>
-            <li>Completed a four-wheel experimental platform with onboard computing, operator display, and front-mounted LiDAR.</li>
-            <li>Implemented grid-based global planning and local obstacle avoidance.</li>
-            <li>Connected planning output with closed-loop chassis control and validated the system in an indoor corridor.</li>
-          </ul>
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Final-platform validation</div>
+          <h2>Key results</h2>
+          <p>The complete system was deployed and evaluated on an integrated mobile robot platform in a simulated indoor retail environment.</p>
         </div>
-        <aside class="detail-panel">
-          <h2>Reported results</h2>
-          <div class="metrics">
-            <div class="metric"><strong>1.59 m</strong>mean following distance</div>
-            <div class="metric"><strong>&lt; 0.15 m</strong>path-tracking error</div>
-            <div class="metric"><strong>±5°</strong>heading repeatability</div>
-          </div>
-          <p class="status">Additional repeat-localization errors: X ±0.05 m and Y ±0.10 m. Values are taken from the formal final report; repeat counts and target-distance tolerance were not available in the public project materials.</p>
-        </aside>
-      </div>
-
-      <div class="container gallery gallery-contained">
-        <figure><img src="../assets/followme-prototype.png" alt="Early green shopping-cart integration attempt"><figcaption>Stage 1 · Green folding-cart conversion used for hardware integration; it did not become the final experimental platform.</figcaption></figure>
+        <div class="result-strip">
+          <div><strong>1.39 m</strong><span>Mean following distance</span></div>
+          <div><strong>0.012 m</strong><span>Mean lateral offset</span></div>
+          <div><strong>0.15%</strong><span>Travel-distance error</span></div>
+          <div><strong>73.04%</strong><span>Trajectory roughness reduction</span></div>
+        </div>
+        <p class="status">The mean following distance was within the intended 1.0–1.5 m interval, while repeated navigation tests demonstrated centimeter-level lateral stability.</p>
       </div>
 
       <div class="container detail-section detail-grid">
         <div class="detail-panel compact-panel">
-          <h2>My role</h2>
-          <p><strong>Project lead · Path-planning developer · System-integration coordinator</strong></p>
-          <ul>
-            <li>Designed the grid-based A* global-planning workflow.</li>
-            <li>Implemented eight-neighbor search, obstacle constraints, path reconstruction, and path simplification.</li>
-            <li>Participated in global-local planner integration.</li>
-            <li>Coordinated planning and chassis-control interfaces.</li>
-            <li>Organized simulation and physical testing and analyzed trajectory errors.</li>
-          </ul>
-        </div>
-        <aside class="detail-panel compact-panel">
-          <h2>Technical stack</h2>
+          <div class="eyebrow">Project overview</div>
+          <h2>From a shopping-cart prototype to an integrated robotic system</h2>
+          <p>This project explored how sensing, planning, and motion control could be integrated into an autonomous shopping-cart system. The work began with the conversion of a conventional folding cart, including motorized drive installation, LiDAR mounting, embedded control, onboard computing, and ROS communication.</p>
+          <p>The complete software workflow was subsequently deployed on a dedicated Ackermann-steering mobile platform. The integrated system combined LiDAR–IMU mapping, robot localization, UWB target positioning, global-local path planning, closed-loop motion control, and physical experiment validation.</p>
           <div class="chips">
-            <span class="chip">ROS</span><span class="chip">LiDAR</span><span class="chip">A*</span><span class="chip">Local planning</span><span class="chip">PID control</span>
+            <span class="chip">Motorized drive</span><span class="chip">LiDAR</span><span class="chip">Embedded control</span><span class="chip">ROS</span>
           </div>
-          <p class="status">Undergraduate Innovation Training Project, Hefei University of Technology · May 2025–April 2026.</p>
-        </aside>
-      </div>
-
-      <div class="container detail-section">
-        <div class="section-heading">
-          <div class="eyebrow">Platform development</div>
-          <h2>Early hardware integration</h2>
-          <p>The green cart served as the first physical integration platform for LiDAR placement, wiring, and drive installation. Experience from this stage informed the completed four-wheel vehicle used in the final experiments.</p>
         </div>
         <div class="gallery gallery-contained">
-          <figure><img loading="lazy" src="../assets/followme-lidar-integration.jpg" alt="LiDAR mounted during the early green-cart integration attempt"><figcaption>Early LiDAR mounting and mechanical integration work on the green cart.</figcaption></figure>
+          <figure><img src="../assets/followme-prototype.png" alt="Green folding-cart prototype with a mounted LiDAR"><figcaption>Initial shopping-cart prototype used for drive-system, LiDAR, and onboard-hardware integration.</figcaption></figure>
         </div>
       </div>
 
-      <div class="container detail-section">
+      <div class="container detail-section" id="technical-route">
         <div class="section-heading">
-          <div class="eyebrow">Final experimental platform</div>
-          <h2>The completed system used a dedicated four-wheel mechanical vehicle</h2>
-          <p>The final platform combined a rigid mobile chassis, front-mounted 2D LiDAR, onboard computing, and an integrated display and control interface. This configuration provided a consistent base for indoor route execution, trajectory tracking, and obstacle-avoidance experiments.</p>
-        </div>
-        <div class="gallery two gallery-contained">
-          <figure><img loading="lazy" src="../assets/followme-final-platform.jpg" alt="Completed four-wheel mobile robot with LiDAR and onboard computing"><figcaption>Completed platform · Four-wheel mechanical chassis with front-mounted LiDAR and onboard computing equipment.</figcaption></figure>
-          <figure><img loading="lazy" src="../assets/followme-final-experiment.jpg" alt="Completed mobile robot in the corridor experiment layout"><figcaption>Experiment layout · The completed robot facing a traffic-cone course in an indoor corridor.</figcaption></figure>
-        </div>
-        <div class="gallery gallery-contained">
-          <figure><img loading="lazy" src="../assets/followme-static-avoidance.jpg" alt="Completed mobile robot performing a static obstacle-avoidance test"><figcaption>Physical validation · Static obstacle-avoidance test on the completed four-wheel platform.</figcaption></figure>
-        </div>
-      </div>
-
-      <div class="container detail-section">
-        <div class="section-heading">
-          <div class="eyebrow">System workflow</div>
-          <h2>From environment representation to chassis motion</h2>
-          <p>The verified planning workflow connects sensor inputs, occupancy-grid representation, global-local planning, and closed-loop control.</p>
+          <div class="eyebrow">Technical route</div>
+          <h2>From hardware integration to physical validation</h2>
+          <p>The project followed a complete robotics workflow from physical platform development to perception, planning, control, and experimental evaluation.</p>
         </div>
         <div class="process-grid">
-          <article class="process-step"><span>01</span><h3>Sense</h3><p>LiDAR and odometry capture the surrounding geometry and robot state.</p></article>
-          <article class="process-step"><span>02</span><h3>Represent</h3><p>A binary occupancy grid marks free space and obstacles for route generation.</p></article>
-          <article class="process-step"><span>03</span><h3>Plan</h3><p>A* generates the global route while local planning reacts to nearby obstacles.</p></article>
-          <article class="process-step"><span>04</span><h3>Control</h3><p>Closed-loop control converts path error into differential wheel commands.</p></article>
+          <article class="process-step"><span>01</span><h3>Hardware integration</h3><p>An onboard computer, STM32 controller, LiDAR, dual-base-station UWB system, IMU, motor drivers, steering actuator, and wheel encoders formed the physical system.</p></article>
+          <article class="process-step"><span>02</span><h3>Mapping &amp; localization</h3><p>LiDAR–IMU factor-graph mapping and LM-enhanced AMCL provided the environment model and robot pose.</p></article>
+          <article class="process-step"><span>03</span><h3>Target positioning</h3><p>Dual-base-station UWB and variable-step Kalman filtering estimated a stable target distance and direction.</p></article>
+          <article class="process-step"><span>04</span><h3>Global planning</h3><p>An improved A* planner reduced redundant exploration and removed unnecessary path nodes.</p></article>
+          <article class="process-step"><span>05</span><h3>Local avoidance</h3><p>An improved DWA planner balanced goal direction, obstacle clearance, speed, and global-route consistency.</p></article>
+          <article class="process-step"><span>06</span><h3>Motion control</h3><p>Planned velocities were converted into Ackermann steering and encoder-based closed-loop drive commands.</p></article>
+          <article class="process-step"><span>07</span><h3>Physical validation</h3><p>Repeated navigation, target-following, trajectory-stability, and obstacle-avoidance experiments evaluated the integrated system.</p></article>
         </div>
       </div>
 
-      <div class="container gallery two">
-        <figure><img src="../assets/followme-astar-planning-demo.svg" alt="Reproducible A-star path-planning result"><figcaption>Reproducible A* result generated from the public reconstruction; this is not a historical ROS or RViz screenshot.</figcaption></figure>
-        <article class="detail-panel compact-panel">
-          <div class="eyebrow">Original proposal · Intended scope</div>
-          <h2>Proposed technical roadmap</h2>
-          <p>The initial proposal organized the project into four connected workstreams:</p>
-          <ul>
-            <li><strong>Platform integration:</strong> mobile-base selection, motor control, LiDAR placement, and sensor layout.</li>
-            <li><strong>Autonomous motion:</strong> A* global planning, local obstacle avoidance, and PID path tracking.</li>
-            <li><strong>Perception concepts:</strong> environment mapping, visual perception, and voice interaction.</li>
-            <li><strong>Validation:</strong> system integration followed by simulation and physical experiments.</li>
-          </ul>
-          <p class="status">This roadmap records the intended project scope; it is not evidence that every proposed module reached final integration.</p>
-        </article>
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Integrated experimental platform</div>
+          <h2>Hardware for complete software deployment</h2>
+          <p>The final platform provided the mechanical stability, sensing coverage, onboard computing, and repeatable motion required for quantitative evaluation.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Module</th><th>Configuration</th><th>Function</th></tr></thead>
+            <tbody>
+              <tr><td>Onboard computer</td><td>Jetson Orin NX Super 16GB</td><td>ROS and algorithm execution</td></tr>
+              <tr><td>Chassis controller</td><td>STM32F407VET6</td><td>Motor and steering control</td></tr>
+              <tr><td>LiDAR</td><td>Leishen C16</td><td>Mapping and obstacle sensing</td></tr>
+              <tr><td>UWB</td><td>DWM3220 dual-base-station system</td><td>Target distance and direction</td></tr>
+              <tr><td>IMU</td><td>ICM20948</td><td>Attitude and motion estimation</td></tr>
+              <tr><td>Chassis</td><td>Ackermann-steering platform</td><td>Stable trajectory execution</td></tr>
+              <tr><td>Encoder</td><td>500-line AB encoder</td><td>Wheel-speed feedback</td></tr>
+              <tr><td>Battery</td><td>24 V, 6000 mAh</td><td>System power supply</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="gallery gallery-contained">
+          <figure><img loading="lazy" src="../assets/followme-final-platform.jpg" alt="Integrated Ackermann-steering mobile robot used for final validation"><figcaption>Integrated mobile platform used for complete software deployment and physical validation.</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Planning algorithms</div>
+          <h2>Global efficiency and local responsiveness</h2>
+          <p>The planning stack combined an improved A* global planner with an adaptive DWA local planner.</p>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-panel compact-panel">
+            <h2>Improved A* global planning</h2>
+            <p>The global planner introduced target-oriented direction screening, obstacle-density-based heuristic adjustment, and two-stage redundant-node removal. These changes reduced unnecessary exploration and generated smoother routes with fewer turns.</p>
+            <ul>
+              <li>Direction screening retained five target-oriented search directions.</li>
+              <li>Obstacle density adjusted the heuristic contribution.</li>
+              <li>Collinear-node removal and collision-checked shortcutting simplified the route.</li>
+            </ul>
+          </article>
+          <article class="detail-panel compact-panel">
+            <h2>Improved DWA local planning</h2>
+            <p>The local planner added a target-distance term and dynamically adjusted obstacle-avoidance weights. In open space, it prioritized efficient forward motion. Near an obstacle, safety and clearance received greater weight.</p>
+            <div class="chips"><span class="chip">Heading alignment</span><span class="chip">Obstacle clearance</span><span class="chip">Motion speed</span><span class="chip">Route consistency</span></div>
+          </article>
+        </div>
+        <div class="result-strip">
+          <div><strong>−51.98%</strong><span>Explored nodes</span></div>
+          <div><strong>−38.72%</strong><span>Turning points</span></div>
+          <div><strong>−53.09%</strong><span>Cumulative turning angle</span></div>
+          <div><strong>−1.26%</strong><span>Average path length</span></div>
+        </div>
+        <p class="status">In the 45×45 grid environment, explored nodes decreased from 785 to 202, runtime from 0.1321 s to 0.0473 s, and cumulative turning angle from 540° to 218.68°.</p>
+      </div>
+
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Autonomous following</div>
+          <h2>From target position to motion command</h2>
+          <p>Front and rear UWB base stations continuously estimated the target’s relative distance and direction. LiDAR-based local planning remained active throughout the task to handle unexpected obstacles.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><span>01</span><h3>Locate</h3><p>Estimate target distance and bearing using dual-base-station UWB.</p></article>
+          <article class="process-step"><span>02</span><h3>Evaluate</h3><p>Determine target direction and compare the measured distance with the safety threshold.</p></article>
+          <article class="process-step"><span>03</span><h3>Plan</h3><p>Generate the global route and evaluate collision-free local trajectories.</p></article>
+          <article class="process-step"><span>04</span><h3>Execute</h3><p>Send steering and velocity commands to the chassis controller.</p></article>
+        </div>
+      </div>
+
+      <div class="container detail-section">
+        <div class="section-heading">
+          <div class="eyebrow">Physical validation</div>
+          <h2>Localization, navigation, following, and avoidance</h2>
+          <p>The final evaluation combined repeated measurements with physical indoor experiments.</p>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-panel compact-panel">
+            <h2>UWB trajectory filtering</h2>
+            <p>Three walking routes were tested three times each, producing nine measured target trajectories.</p>
+            <ul>
+              <li>MSE: 0.0143 m²</li>
+              <li>MAE: 0.0938 m</li>
+              <li>Maximum deviation: 0.2847 m</li>
+              <li>Trajectory roughness: 0.0384 → 0.0100 m</li>
+            </ul>
+          </article>
+          <article class="detail-panel compact-panel">
+            <h2>Repeated navigation</h2>
+            <p>The robot completed ten navigation trials between fixed start and target positions.</p>
+            <ul>
+              <li>Travel-distance error: 0.15 ± 0.07%</li>
+              <li>Mean lateral offset: 0.012 ± 0.012 m</li>
+              <li>Mean heading deviation: 1.9 ± 1.0°</li>
+              <li>Heading fluctuation: 1.7 ± 0.4°</li>
+            </ul>
+          </article>
+        </div>
+        <div class="detail-grid embedded-section">
+          <article class="detail-panel compact-panel">
+            <h2>Target following</h2>
+            <p>The robot followed a moving target along a route containing straight and turning segments. The mean following distance was <strong>1.39 m</strong>, within the intended <strong>1.0–1.5 m</strong> interval. Temporary fluctuations appeared during turns, after which the system returned to a stable following state.</p>
+          </article>
+          <article class="detail-panel compact-panel">
+            <h2>Dynamic obstacle avoidance</h2>
+            <p>A pedestrian entered the planned route while static obstacles remained present. The robot generated a collision-free detour, maintained target tracking, and continued the following task after passing the obstacle.</p>
+          </article>
+        </div>
+        <div class="gallery two gallery-contained">
+          <figure><img loading="lazy" src="../assets/followme-final-experiment.jpg" alt="Integrated mobile robot in an indoor experiment layout"><figcaption>Indoor experiment layout used for system-level validation.</figcaption></figure>
+          <figure><img loading="lazy" src="../assets/followme-static-avoidance.jpg" alt="Integrated mobile robot performing an obstacle-avoidance test"><figcaption>Physical obstacle-avoidance test on the integrated mobile platform.</figcaption></figure>
+        </div>
       </div>
 
       <div class="container detail-section detail-grid">
         <div class="detail-panel compact-panel">
-          <h2>Planning contribution</h2>
+          <div class="eyebrow">My contribution</div>
+          <h2>Planning, integration, and evaluation</h2>
+          <p>As project lead, I coordinated the technical roadmap and system integration. My main technical work focused on global path planning, planner coordination, software-interface integration, experiment organization, and quantitative result analysis.</p>
           <ul>
-            <li>Eight-direction grid search with map-boundary and collision checks</li>
-            <li>Heuristic-guided node expansion and parent-based path reconstruction</li>
-            <li>Redundant-turn removal and collision-checked path shortcutting</li>
-            <li>Local trajectory scoring using goal direction, obstacle clearance, speed, and global-route consistency</li>
+            <li>Developed and refined the A* global-planning workflow.</li>
+            <li>Participated in A* and DWA planner integration.</li>
+            <li>Coordinated interfaces among localization, planning, and chassis-control modules.</li>
+            <li>Organized simulation and physical experiments.</li>
+            <li>Evaluated positioning, trajectory, and following performance.</li>
+            <li>Managed project documentation and final presentation materials.</li>
           </ul>
         </div>
         <aside class="detail-panel compact-panel">
-          <h2>Evidence boundary</h2>
-          <p>The archived RViz map came from proposal material and is intentionally excluded because it was not generated by the project vehicle. Visual target recognition and multimodal fusion were also not fully integrated.</p>
-          <p class="status">The planning figure above is regenerated from the public reconstruction and is not presented as output from the missing historical ROS workspace.</p>
-          <p><a class="project-link" href="https://github.com/zr057/follow-me-shopping-robot">Explore the code and documentation →</a></p>
+          <div class="eyebrow">Engineering lessons</div>
+          <h2>Algorithms depend on the complete system</h2>
+          <p>The project demonstrated that autonomous robot performance depends not only on algorithms, but also on mechanical structure, sensor placement, coordinate calibration, communication latency, and chassis-control accuracy.</p>
+          <p>The initial shopping-cart prototype provided practical experience in hardware integration. The final experimental platform made it possible to separate hardware uncertainty from algorithm performance and complete repeatable system-level validation.</p>
+          <p><a class="project-link" href="https://github.com/zr057/follow-me-shopping-robot">Explore the code and project documentation →</a></p>
         </aside>
       </div>
     </section>
