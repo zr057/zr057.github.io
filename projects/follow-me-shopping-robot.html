@@ -62,9 +62,9 @@
           <p>The project followed a complete robotics workflow from physical platform development to perception, planning, control, and experimental evaluation.</p>
         </div>
         <div class="process-grid">
-          <article class="process-step"><span>01</span><h3>Hardware integration</h3><p>An onboard computer, STM32 controller, LiDAR, dual-base-station UWB system, IMU, motor drivers, steering actuator, and wheel encoders formed the physical system.</p></article>
+            <article class="process-step"><span>01</span><h3>Hardware integration</h3><p>An onboard computer, STM32 controller, LiDAR, two vehicle-mounted UWB base stations, one target-worn UWB tag, IMU, motor drivers, steering actuator, and wheel encoders formed the physical system.</p></article>
           <article class="process-step"><span>02</span><h3>Mapping &amp; localization</h3><p>LiDAR–IMU factor-graph mapping and LM-enhanced AMCL provided the environment model and robot pose.</p></article>
-          <article class="process-step"><span>03</span><h3>Target positioning</h3><p>Dual-base-station UWB and variable-step Kalman filtering estimated a stable target distance and direction.</p></article>
+            <article class="process-step"><span>03</span><h3>Target positioning</h3><p>AoA/PDoA supplied the tag bearing, UWB ranging supplied the following distance, and variable-step Kalman filtering stabilized the target estimate.</p></article>
           <article class="process-step"><span>04</span><h3>Global planning</h3><p>An improved A* planner reduced redundant exploration and removed unnecessary path nodes.</p></article>
           <article class="process-step"><span>05</span><h3>Local avoidance</h3><p>An improved DWA planner balanced goal direction, obstacle clearance, speed, and global-route consistency.</p></article>
           <article class="process-step"><span>06</span><h3>Motion control</h3><p>Planned velocities were converted into Ackermann steering and encoder-based closed-loop drive commands.</p></article>
@@ -85,7 +85,7 @@
               <tr><td>Onboard computer</td><td>Jetson Orin NX Super 16GB</td><td>ROS and algorithm execution</td></tr>
               <tr><td>Chassis controller</td><td>STM32F407VET6</td><td>Motor and steering control</td></tr>
               <tr><td>LiDAR</td><td>Leishen C16</td><td>Mapping and obstacle sensing</td></tr>
-              <tr><td>UWB</td><td>DWM3220 dual-base-station system</td><td>Target distance and direction</td></tr>
+              <tr><td>UWB</td><td>Two base stations + one target tag</td><td>AoA bearing and following distance</td></tr>
               <tr><td>IMU</td><td>ICM20948</td><td>Attitude and motion estimation</td></tr>
               <tr><td>Chassis</td><td>Ackermann-steering platform</td><td>Stable trajectory execution</td></tr>
               <tr><td>Encoder</td><td>500-line AB encoder</td><td>Wheel-speed feedback</td></tr>
@@ -133,10 +133,10 @@
         <div class="section-heading">
           <div class="eyebrow">Autonomous following</div>
           <h2>From target position to motion command</h2>
-          <p>Front and rear UWB base stations continuously estimated the target’s relative distance and direction. LiDAR-based local planning remained active throughout the task to handle unexpected obstacles.</p>
+          <p>Two vehicle-mounted UWB base stations received signals from one tag carried by the target. AoA/PDoA provided the relative bearing, while UWB ranging provided the following distance. This differs from range-only ToA/TWR trilateration, which normally requires at least three non-collinear anchors for a two-dimensional position. LiDAR-based local planning remained active throughout the task to handle unexpected obstacles.</p>
         </div>
         <div class="process-grid">
-          <article class="process-step"><span>01</span><h3>Locate</h3><p>Estimate target distance and bearing using dual-base-station UWB.</p></article>
+          <article class="process-step"><span>01</span><h3>Locate</h3><p>Use AoA/PDoA to estimate the tagged target’s bearing and UWB ranging to measure following distance.</p></article>
           <article class="process-step"><span>02</span><h3>Evaluate</h3><p>Determine target direction and compare the measured distance with the safety threshold.</p></article>
           <article class="process-step"><span>03</span><h3>Plan</h3><p>Generate the global route and evaluate collision-free local trajectories.</p></article>
           <article class="process-step"><span>04</span><h3>Execute</h3><p>Send steering and velocity commands to the chassis controller.</p></article>
