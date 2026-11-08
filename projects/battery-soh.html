@@ -133,6 +133,12 @@
           <h2>Cross-battery prediction results</h2>
           <p>The proposed GJO-TCN-Transformer reported the lowest MAE, RMSE, and MAPE among the three compared models in all four transfer settings.</p>
         </div>
+        <div class="evidence-flow" aria-label="Evaluation evidence structure">
+          <article><span>01 · Protocol</span><strong>Four train-to-test transfer directions</strong></article>
+          <article><span>02 · Evidence</span><strong>Measured and predicted full-life SOH trajectories</strong></article>
+          <article><span>03 · Metrics</span><strong>MAE, RMSE, and MAPE for every direction</strong></article>
+          <article><span>04 · Conclusion</span><strong>Consistent accuracy across target cells</strong></article>
+        </div>
         <div class="table-wrap">
           <table class="data-table results-table">
             <thead><tr><th>Fine-tuning cell → prediction cell</th><th>MAE (%)</th><th>RMSE (%)</th><th>MAPE (%)</th></tr></thead>
@@ -144,7 +150,7 @@
             </tbody>
           </table>
         </div>
-        <div class="insight-box"><strong>Result interpretation.</strong> The proposed model remains close to the measured SOH trajectory through nonlinear late-life degradation, where the two baselines show larger fluctuations. Values shown here are reported from the revised manuscript.</div>
+        <div class="insight-box"><strong>Interpretation.</strong> The reported trajectories remain close to measured SOH through nonlinear late-life degradation, while the two baselines show larger fluctuations. The conclusion is supported jointly by the full-life curves and all three error metrics, rather than a single favorable test case.</div>
       </div>
 
       <div class="container detail-section prediction-section">

@@ -330,6 +330,10 @@ section { padding: 72px 0; }
 .result-context { margin-top: 11px; margin-bottom: 30px; color: var(--muted); font-size: .9rem; text-align: center; }
 .result-context + .detail-section { margin-top: 18px; }
 .project-intro-grid { margin-top: 0; }
+.evidence-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; margin: 0 0 24px; }
+.evidence-flow article { padding: 16px 15px; border: 1px solid #d9e4ec; border-radius: 10px; background: #f6f9fc; }
+.evidence-flow span { display: block; margin-bottom: 7px; color: var(--blue); font-size: .72rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.evidence-flow strong { color: #334d65; font-size: .86rem; line-height: 1.45; }
 .battery-experiment-gallery img { height: 360px; object-fit: contain; background: #eef3f6; }
 .reflection-grid { margin-top: 34px; }
 .followme-hero { background: radial-gradient(circle at 88% 18%, rgba(23,105,170,.14), transparent 28%), linear-gradient(145deg, #fff, #edf5fa); }
@@ -377,6 +381,7 @@ section { padding: 72px 0; }
   .profile-photo { width: 132px; height: 156px; border-radius: 18px; }
   .profile-wrap span { max-width: 180px; }
   .focus-grid { grid-template-columns: 1fr; }
+  .evidence-flow { grid-template-columns: repeat(2, 1fr); }
   .focus-card { min-height: 0; }
   .project-card, .detail-grid { grid-template-columns: 1fr; }
   .experience-grid { grid-template-columns: 1fr; }
@@ -407,6 +412,7 @@ section { padding: 72px 0; }
   .project-media, .gallery.two { grid-template-columns: 1fr; }
   .project-content { padding: 28px 23px; }
   .project-result { grid-template-columns: 1fr; gap: 2px; }
+  .evidence-flow { grid-template-columns: 1fr; }
   .contact-actions { width: 100%; }
   .contact-actions .button { flex: 1; }
   .metrics { grid-template-columns: 1fr; }

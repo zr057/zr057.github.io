@@ -38,13 +38,13 @@
           <div><span>Tools</span><strong>Python · SciPy · NumPy</strong></div>
         </div>
 
-        <div class="result-strip result-strip-raised" aria-label="Representative simulation results">
-          <div><strong>35.0°C</strong><span>Thermal ECMS peak temperature</span></div>
-          <div><strong>0.612</strong><span>Thermal ECMS final SOC</span></div>
-          <div><strong>4</strong><span>control strategies evaluated</span></div>
-          <div><strong>30×</strong><span>CLTC-P cycles in baseline run</span></div>
+        <div class="result-strip result-strip-raised" aria-label="Simulation study scope">
+          <div><strong>4</strong><span>Control strategies</span></div>
+          <div><strong>1,800 s</strong><span>CLTC-P driving cycle</span></div>
+          <div><strong>25 / 35°C</strong><span>Ambient scenarios</span></div>
+          <div><strong>SOC + T</strong><span>Coupled battery states</span></div>
         </div>
-        <p class="result-context">Representative 35°C case with an initial SOC of 0.60. Fuel consumption is interpreted together with terminal SOC, not as a stand-alone ranking.</p>
+        <p class="result-context">Study scope is shown here; numerical outcomes remain in the results section where operating conditions and comparison limits are visible.</p>
 
         <div class="detail-grid detail-section project-intro-grid">
           <article class="detail-panel">
@@ -149,6 +149,13 @@
           <div class="eyebrow">Quantitative results</div>
           <h2>Thermal-aware control changes both the battery trajectory and engine operation</h2>
           <p>Representative baseline: 30 repeated CLTC-P cycles, 35°C ambient temperature, initial SOC 0.60, ECMS equivalence factor 1.6, and thermal penalty weight 5.0.</p>
+        </div>
+
+        <div class="evidence-flow" aria-label="Simulation evidence structure">
+          <article><span>01 · Protocol</span><strong>30× CLTC-P · 35°C · initial SOC 0.60</strong></article>
+          <article><span>02 · Evidence</span><strong>SOC, temperature, engine-power, and battery-power traces</strong></article>
+          <article><span>03 · Metrics</span><strong>Equivalent fuel, final SOC, and peak temperature</strong></article>
+          <article><span>04 · Limitation</span><strong>Fuel values require terminal-SOC context</strong></article>
         </div>
 
         <div class="gallery gallery-contained">

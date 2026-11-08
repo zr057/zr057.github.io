@@ -32,10 +32,10 @@
           <p>The complete workflow was deployed on the final mobile platform and evaluated through repeated indoor experiments.</p>
         </div>
         <div class="result-strip">
-          <div><strong>1.39 m</strong><span>Mean following distance</span></div>
-          <div><strong>0.012 m</strong><span>Mean lateral offset</span></div>
-          <div><strong>0.15%</strong><span>Travel-distance error</span></div>
-          <div><strong>73.04%</strong><span>Trajectory roughness reduction</span></div>
+          <div><strong>1.39 m</strong><span>Mean following distance · target 1.0–1.5 m</span></div>
+          <div><strong>73.04%</strong><span>UWB trajectory-roughness reduction</span></div>
+          <div><strong>9</strong><span>Measured UWB trajectories</span></div>
+          <div><strong>10</strong><span>Repeated navigation trials</span></div>
         </div>
         <p class="status">Evidence at a glance: nine UWB trajectory measurements, ten repeated navigation trials, a physical target-following test, and dynamic-obstacle experiments.</p>
       </div>
@@ -143,7 +143,13 @@
         <div class="section-heading">
           <div class="eyebrow">Physical validation</div>
           <h2>Localization, navigation, following, and avoidance</h2>
-          <p>The final evaluation combined repeated measurements with physical indoor experiments.</p>
+          <p>The final evaluation separates four questions: whether target localization is smoother, navigation is repeatable, following distance remains controlled, and the robot can continue tracking around a moving obstacle.</p>
+        </div>
+        <div class="evidence-flow" aria-label="Validation evidence structure">
+          <article><span>01 · Protocol</span><strong>3 routes × 3 UWB runs<br>10 navigation trials</strong></article>
+          <article><span>02 · Evidence</span><strong>Trajectories, distance behavior, and physical tests</strong></article>
+          <article><span>03 · Metrics</span><strong>Error, roughness, lateral offset, heading, and distance</strong></article>
+          <article><span>04 · Conclusion</span><strong>Stable following with recovery after turning transients</strong></article>
         </div>
         <div class="gallery gallery-contained followme-evidence-chart">
           <figure><img loading="lazy" src="../assets/followme-validation-summary.svg" alt="English summary chart of UWB trajectory smoothing and following-distance stability"><figcaption>Experiment summary recreated from measured results; no illustrative or simulated values are used.</figcaption></figure>
@@ -151,7 +157,7 @@
         <div class="detail-grid embedded-section">
           <article class="detail-panel compact-panel">
             <h2>UWB trajectory filtering</h2>
-            <p>Three walking routes were tested three times each, producing nine measured target trajectories.</p>
+            <p><strong>Test design.</strong> Three walking routes were tested three times each, producing nine measured target trajectories.</p>
             <ul>
               <li>MSE: 0.0143 m²</li>
               <li>MAE: 0.0938 m</li>
@@ -161,7 +167,7 @@
           </article>
           <article class="detail-panel compact-panel">
             <h2>Repeated navigation</h2>
-            <p>The robot completed ten navigation trials between fixed start and target positions.</p>
+            <p><strong>Test design.</strong> The robot completed ten navigation trials between fixed start and target positions.</p>
             <ul>
               <li>Travel-distance error: 0.15 ± 0.07%</li>
               <li>Mean lateral offset: 0.012 ± 0.012 m</li>
@@ -173,11 +179,11 @@
         <div class="detail-grid embedded-section">
           <article class="detail-panel compact-panel">
             <h2>Target following</h2>
-            <p>The robot followed a moving target along a route containing straight and turning segments. The mean following distance was <strong>1.39 m</strong>, within the intended <strong>1.0–1.5 m</strong> interval. Temporary fluctuations appeared during turns, after which the system returned to a stable following state.</p>
+            <p><strong>Observation.</strong> The robot followed a moving target through straight and turning segments. The mean distance was <strong>1.39 m</strong>, within the intended <strong>1.0–1.5 m</strong> interval. Turn-related fluctuations were temporary, and the controller returned the system to a stable following state.</p>
           </article>
           <article class="detail-panel compact-panel">
             <h2>Dynamic obstacle avoidance</h2>
-            <p>A pedestrian entered the planned route while static obstacles remained present. The robot generated a collision-free detour, maintained target tracking, and continued the following task after passing the obstacle.</p>
+            <p><strong>Observation.</strong> A pedestrian entered the planned route while static obstacles remained present. The robot generated a collision-free detour, maintained target tracking, and continued following after passing the obstacle.</p>
           </article>
         </div>
         <div class="gallery two gallery-contained">
