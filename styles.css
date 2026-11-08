@@ -188,6 +188,8 @@ section { padding: 72px 0; }
 }
 
 .experience-card p { margin: 0; color: var(--muted); }
+.experience-details { margin: 18px 0 0; padding-left: 20px; color: #526477; font-size: .9rem; }
+.experience-details li + li { margin-top: 9px; }
 .experience-card .experience-focus { margin-top: 18px; color: #31516c; font-size: .85rem; font-weight: 700; }
 
 .experience-logo-wrap {
