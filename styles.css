@@ -214,17 +214,6 @@ section { padding: 72px 0; }
 
 .catarc-logo { width: 104px; object-fit: contain; }
 
-.experience-card-photo {
-  margin: 22px 0 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #fff;
-}
-
-.experience-card-photo img { display: block; width: 100%; height: auto; }
-.experience-card-photo figcaption { padding: 11px 13px; color: var(--muted); font-size: .84rem; border-top: 1px solid var(--line); }
-
 .publication, .contact-panel, .detail-panel {
   padding: 30px 32px;
   border: 1px solid var(--line);
