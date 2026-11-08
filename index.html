@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Rong Zhang — research in battery intelligence, energy management, and autonomous mobile robotics.">
   <title>Rong Zhang | Research Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=battery-cover-2">
+  <link rel="stylesheet" href="styles.css?v=home-2026-11">
 </head>
 <body>
   <header class="site-header">
@@ -21,18 +21,21 @@
     </nav>
   </header>
 
-  <main id="top">
-    <div class="hero">
+  <main id="top" class="home-page">
+    <div class="hero home-hero">
       <div class="container hero-grid">
-        <img class="profile-photo" src="assets/rong-zhang-profile.jpg" alt="Portrait of Rong Zhang">
+        <div class="profile-wrap">
+          <img class="profile-photo" src="assets/rong-zhang-profile.jpg" alt="Portrait of Rong Zhang">
+          <span>Intelligent Vehicle Engineering</span>
+        </div>
         <div>
-          <div class="eyebrow">Research portfolio</div>
+          <div class="eyebrow">Undergraduate researcher · Engineering portfolio</div>
           <h1>Rong Zhang</h1>
           <p class="hero-identity">B.Eng. candidate in Intelligent Vehicle Engineering · Hefei University of Technology · 2023–2027</p>
           <p class="hero-subtitle">Battery intelligence · Energy management · Autonomous robotics</p>
-          <p class="hero-copy">I develop data-driven methods and intelligent control systems for electrified vehicles and mobile robots, combining experiments, time-series modeling, optimization, path planning, and engineering evaluation. My long-term goal is to build reliable learning and control methods that can be validated on real physical systems.</p>
+          <p class="hero-copy">I develop data-driven models and control methods for electrified vehicles and mobile robots, connecting algorithm design with experiments, simulation, and physical-system validation.</p>
           <div class="hero-actions">
-            <a class="button" href="#research">View research</a>
+            <a class="button" href="#research">View selected work</a>
             <a class="button secondary" href="https://github.com/zr057">GitHub profile</a>
             <a class="button secondary" href="mailto:18994136236@163.com">Email</a>
           </div>
@@ -48,29 +51,24 @@
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="about-section">
       <div class="container">
-        <div class="eyebrow">About</div>
-        <h2>Research focus</h2>
-        <p class="section-intro">My work connects data-driven modeling with physical-system implementation, from battery health estimation and vehicle energy management to autonomous mobile-robot planning and control.</p>
-        <div class="chips" aria-label="Research interests">
-          <span class="chip">Battery SOH & prognostics</span>
-          <span class="chip">Transfer learning</span>
-          <span class="chip">Time-series modeling</span>
-          <span class="chip">Energy management</span>
-          <span class="chip">Thermal management</span>
-          <span class="chip">Optimization & control</span>
-          <span class="chip">Autonomous mobile robots</span>
-          <span class="chip">Path planning</span>
+        <div class="eyebrow">Research focus</div>
+        <h2>Three connected engineering directions</h2>
+        <p class="section-intro">My work moves between data, control, and physical validation while keeping the engineering question visible.</p>
+        <div class="focus-grid">
+          <a class="focus-card" href="projects/battery-soh.html"><span>01</span><h3>Battery intelligence</h3><p>High-rate aging experiments, health indicators, transfer learning, and full-life SOH prediction.</p><strong>Experimental data → health model</strong></a>
+          <a class="focus-card" href="projects/phev-energy-thermal.html"><span>02</span><h3>Electrified-vehicle control</h3><p>Vehicle energy flow, battery thermal behavior, online control, and global optimization.</p><strong>Physical model → control strategy</strong></a>
+          <a class="focus-card" href="projects/follow-me-shopping-robot.html"><span>03</span><h3>Autonomous robotics</h3><p>Target localization, global-local planning, motion control, and indoor physical experiments.</p><strong>Sensing → planning → motion</strong></a>
         </div>
       </div>
     </section>
 
     <section id="research">
       <div class="container">
-        <div class="eyebrow">Selected research</div>
-        <h2>Projects</h2>
-        <p class="section-intro">Each project combines a concrete engineering question with reproducible modeling, evaluation, and visualization.</p>
+        <div class="eyebrow">Selected work</div>
+        <h2>Research and engineering projects</h2>
+        <p class="section-intro">Results are shown first; each project page then explains the technical route, evidence, and my role.</p>
 
         <div class="project-list">
           <article class="project-card">
@@ -79,11 +77,12 @@
               <img class="plot" src="assets/battery-soh-result.png" alt="Cross-battery SOH prediction curves">
             </div>
             <div class="project-content">
+              <span class="project-number">Project 01</span>
               <div class="project-meta">Battery health · Research manuscript</div>
               <h3>Cross-Rate Lithium-Ion Battery SOH Prediction</h3>
               <p>A GJO-TCN-Transformer transfer-learning framework that transfers degradation knowledge from public datasets to high-rate automotive pouch cells.</p>
               <p class="contribution"><strong>My contribution:</strong> high-rate cell experiments, health-feature engineering, model development, transfer-learning validation, and first-author manuscript preparation.</p>
-              <p class="status"><strong>Key result:</strong> Reported 0.319–0.444% MAPE across four cross-battery transfer settings.</p>
+              <p class="project-result"><strong>Key result</strong><span>0.319–0.444% MAPE across four cross-battery transfer settings</span></p>
               <div class="project-tags">
                 <span class="tag">MATLAB</span>
                 <span class="tag">TCN</span>
@@ -95,16 +94,16 @@
           </article>
 
           <article class="project-card">
-            <div class="project-media">
-              <img class="plot" src="assets/followme-prototype.png" alt="Early green-cart hardware integration attempt">
-              <img src="assets/followme-corridor-test.jpg" alt="Final four-wheel platform in an indoor corridor obstacle-avoidance experiment">
+            <div class="project-media single shopping-cover">
+              <img class="plot" src="assets/followme-prototype.png" alt="Green shopping-cart prototype with integrated drive hardware and LiDAR">
             </div>
             <div class="project-content">
+              <span class="project-number">Project 02</span>
               <div class="project-meta">Mobile robotics · Planning and control</div>
               <h3>FollowMe Autonomous Shopping Cart</h3>
-              <p>A two-stage mobile-robot project that progressed from a green-cart integration prototype to a completed four-wheel platform for planning, control, and obstacle-avoidance validation.</p>
-              <p class="contribution"><strong>My contribution:</strong> project leadership, A* planning, planner-control integration, physical testing, and trajectory-error analysis.</p>
-              <p class="status"><strong>Reported result:</strong> 1.59 m mean following distance, &lt;0.15 m path-tracking error, and ±5° heading repeatability.</p>
+              <p>A team-built mobile-robot system connecting UWB target localization, global-local path planning, autonomous following, and obstacle avoidance.</p>
+              <p class="contribution"><strong>My contribution:</strong> project coordination and collaborative work on A* planning, system integration, physical testing, and quantitative analysis.</p>
+              <p class="project-result"><strong>Key result</strong><span>1.39 m mean following distance · 0.012 m mean lateral offset</span></p>
               <div class="project-tags">
                 <span class="tag">ROS</span>
                 <span class="tag">A*</span>
@@ -115,15 +114,16 @@
           </article>
 
           <article class="project-card">
-            <div class="project-media single">
-              <img class="plot" src="assets/phev-concept-cover.png" alt="AI-generated conceptual illustration of a PHEV powertrain, battery pack, and cooling circuits">
+            <div class="project-media single phev-cover">
+              <img class="plot" src="assets/phev-system-architecture-en.svg?v=3" alt="Coordinated PHEV energy and battery thermal management architecture">
             </div>
             <div class="project-content">
+              <span class="project-number">Project 03</span>
               <div class="project-meta">Electrified vehicles · Control and optimization</div>
               <h3>PHEV Energy and Thermal Management</h3>
               <p>A simulation and evaluation framework comparing CD-CS, ECMS, Thermal ECMS, and dynamic programming under the CLTC-P driving cycle.</p>
               <p class="contribution"><strong>My contribution:</strong> vehicle-demand and component modeling, controller implementation, parameter studies, quantitative evaluation, and visualization.</p>
-              <p class="status"><strong>Representative result:</strong> Thermal ECMS limited peak battery temperature to 35.0°C in the 35°C case; terminal SOC differed across strategies.</p>
+              <p class="project-result"><strong>Representative result</strong><span>35.0°C peak temperature with Thermal ECMS in the 35°C case</span></p>
               <div class="project-tags">
                 <span class="tag">Python</span>
                 <span class="tag">ECMS</span>
@@ -137,7 +137,7 @@
       </div>
     </section>
 
-    <section id="publication">
+    <section id="publication" class="publication-section">
       <div class="container">
         <div class="eyebrow">Publication</div>
         <h2>First-author manuscript</h2>
@@ -177,6 +177,7 @@
             <div class="project-meta">Jul–Aug 2025 · Automotive electronics · Nanjing</div>
             <h3>FORVIA HELLA Electronics</h3>
             <p>Supported intelligent projection-headlamp validation through eight scenario-based pattern tests, defect tracking, fix verification, and technical-manual preparation. Also benchmarked vehicle features and prepared bilingual engineering records.</p>
+            <p class="experience-focus">Validation · Defect tracking · Technical documentation</p>
           </article>
 
           <article class="experience-card">
@@ -187,6 +188,7 @@
             <div class="project-meta">Jul–Aug 2026 · Automotive standards · Industry research</div>
             <h3>CATARC Standards Institute</h3>
             <p>Compared ISO and GB documents, checked technical requirements for intelligent-connected-vehicle and EMC standards, and supported standards research, document review, structured reporting, and technical meetings.</p>
+            <p class="experience-focus">Standards comparison · Technical research · Structured reporting</p>
 
             <figure class="experience-card-photo">
               <img src="assets/automotive-industry-visit.jpg" alt="Automotive industry visit at Great Wall Motor during the CATARC internship">
@@ -202,7 +204,8 @@
         <div class="eyebrow">Contact</div>
         <h2>Get in touch</h2>
         <div class="contact-panel">
-          <p>Email me at <a href="mailto:18994136236@163.com">18994136236@163.com</a>, or explore my work on <a href="https://github.com/zr057">GitHub</a>. A current CV is available upon request.</p>
+          <div><strong>Interested in battery intelligence, electrified-vehicle control, or autonomous robotics?</strong><p>A current CV and additional project materials are available upon request.</p></div>
+          <div class="contact-actions"><a class="button" href="mailto:18994136236@163.com">Email me</a><a class="button secondary" href="https://github.com/zr057">View GitHub</a></div>
         </div>
       </div>
     </section>
