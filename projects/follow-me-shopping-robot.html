@@ -8,15 +8,15 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav"><a class="brand" href="../index.html">Rong Zhang</a><div class="nav-links"><a href="../index.html#research">Research</a><a href="../index.html#publication">Publication</a><a href="../index.html#contact">Contact</a></div></nav></header>
-  <main class="followme-page">
+  <header class="site-header"><nav class="nav"><a class="brand" href="../index.html">Rong Zhang</a><div class="nav-links"><a href="#overview">Overview</a><a href="#system">System</a><a href="#planning">Planning</a><a href="#validation">Validation</a></div></nav></header>
+  <main class="project-detail-page followme-page">
     <div class="detail-hero followme-hero">
       <div class="container">
         <a class="back-link" href="../index.html#research">← Back to projects</a>
         <div class="eyebrow">Mobile robotics · Multi-sensor localization · Motion planning</div>
         <h1>FollowMe Autonomous Shopping Cart</h1>
         <p class="detail-lead">A team-built indoor mobile-robot system that connects target localization, global-local planning, autonomous following, and dynamic obstacle avoidance in one ROS workflow.</p>
-        <div class="followme-meta"><span>Undergraduate innovation project</span><span>Team collaboration</span><span>ROS mobile robotics</span></div>
+        <div class="detail-meta"><span>Undergraduate innovation project</span><span>Team collaboration</span><span>ROS mobile robotics</span></div>
         <div class="hero-actions">
           <a class="button" href="#system">View system</a>
           <a class="button secondary" href="https://github.com/zr057/follow-me-shopping-robot">View GitHub repository</a>
@@ -40,7 +40,7 @@
         <p class="status">Evidence at a glance: nine UWB trajectory measurements, ten repeated navigation trials, a physical target-following test, and dynamic-obstacle experiments.</p>
       </div>
 
-      <div class="container detail-section detail-grid">
+      <div class="container detail-section detail-grid" id="overview">
         <div class="detail-panel compact-panel">
           <div class="eyebrow">Project overview</div>
           <h2>One technical route, developed across two platforms</h2>
@@ -94,7 +94,7 @@
         </div>
       </div>
 
-      <div class="container detail-section">
+      <div class="container detail-section" id="planning">
         <div class="section-heading">
           <div class="eyebrow">Planning algorithms</div>
           <h2>Global efficiency and local responsiveness</h2>
@@ -139,7 +139,7 @@
         </div>
       </div>
 
-      <div class="container detail-section">
+      <div class="container detail-section" id="validation">
         <div class="section-heading">
           <div class="eyebrow">Physical validation</div>
           <h2>Localization, navigation, following, and avoidance</h2>

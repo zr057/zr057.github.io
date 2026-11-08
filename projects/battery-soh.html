@@ -15,13 +15,14 @@
     </nav>
   </header>
 
-  <main>
+  <main class="project-detail-page battery-page">
     <div class="detail-hero battery-detail-hero">
       <div class="container">
         <a class="back-link" href="../index.html#research">← Back to projects</a>
         <div class="eyebrow">Battery health · Transfer learning · First-author research</div>
         <h1>Cross-Rate Lithium-Ion Battery SOH Prediction</h1>
         <p class="detail-lead">A GJO-TCN-Transformer framework that transfers degradation knowledge from eight public cells to high-rate automotive pouch cells when full-life target data are limited.</p>
+        <div class="detail-meta"><span>First-author research</span><span>Experimental + data-driven</span><span>Manuscript under revision</span></div>
         <div class="hero-actions">
           <a class="button" href="#results">View results</a>
           <a class="button secondary" href="#method">Explore methodology</a>
@@ -36,6 +37,14 @@
         <div><span>Target cells</span><strong>3 LG NMC32 pouch cells</strong></div>
         <div><span>Implementation</span><strong>MATLAB</strong></div>
       </div>
+
+      <div class="container result-strip result-strip-raised" aria-label="Reported research results">
+        <div><strong>8</strong><span>public source cells</span></div>
+        <div><strong>3</strong><span>laboratory target cells</span></div>
+        <div><strong>4</strong><span>cross-battery settings</span></div>
+        <div><strong>0.319–0.444%</strong><span>reported MAPE range</span></div>
+      </div>
+      <p class="container result-context">Reported across four target-cell transfer directions using the revised GJO-TCN-Transformer workflow.</p>
 
       <div class="container detail-grid detail-section">
         <div class="detail-panel compact-panel">
@@ -55,20 +64,13 @@
         </aside>
       </div>
 
-      <div class="container result-strip" aria-label="Reported research results">
-        <div><strong>8</strong><span>public source cells</span></div>
-        <div><strong>3</strong><span>laboratory target cells</span></div>
-        <div><strong>4</strong><span>cross-battery settings</span></div>
-        <div><strong>0.319–0.444%</strong><span>reported MAPE range</span></div>
-      </div>
-
       <div id="experiment" class="container detail-section">
         <div class="section-heading">
-          <div class="eyebrow">Experimental foundation</div>
+          <div class="eyebrow">Experimental evidence</div>
           <h2>High-rate pouch-cell aging dataset</h2>
           <p>Three commercial LG NMC32 pouch cells were cycled in a temperature-controlled chamber. Voltage, current, capacity, and temperature were recorded across the aging process to form the target domain.</p>
         </div>
-        <div class="gallery two gallery-contained">
+        <div class="gallery two gallery-contained battery-experiment-gallery">
           <figure><img loading="lazy" src="../assets/battery-chamber.jpg" alt="Pouch cells installed in a temperature-controlled chamber"><figcaption>Temperature-controlled chamber used for the high-rate aging experiments.</figcaption></figure>
           <figure><img loading="lazy" src="../assets/battery-experiment.jpg" alt="Instrumented LG NMC32 pouch cell"><figcaption>Instrumented pouch cell with electrical connections and temperature measurement.</figcaption></figure>
         </div>
@@ -95,7 +97,7 @@
 
       <div id="method" class="container detail-section">
         <div class="section-heading">
-          <div class="eyebrow">Research workflow</div>
+          <div class="eyebrow">Modeling workflow</div>
           <h2>From raw cycling data to target-cell prediction</h2>
           <p>The workflow separates broad degradation-pattern learning from target-domain adaptation so that limited high-rate labels can be used efficiently.</p>
         </div>
@@ -127,7 +129,7 @@
 
       <div id="results" class="container detail-section">
         <div class="section-heading">
-          <div class="eyebrow">Evaluation</div>
+          <div class="eyebrow">Quantitative evaluation</div>
           <h2>Cross-battery prediction results</h2>
           <p>The proposed GJO-TCN-Transformer reported the lowest MAE, RMSE, and MAPE among the three compared models in all four transfer settings.</p>
         </div>
